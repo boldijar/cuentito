@@ -1,0 +1,264 @@
+{
+  "title": "La caja de las preguntas",
+  "titleTranslation": "The box of questions",
+  "level": "C1",
+  "language": "es",
+  "thumbnail": {
+    "filename": "azotea_caja_preguntas_thumbnail_rooftop.png",
+    "generation_prompt": "Rooftop terrace of a hostel at golden hour, string lights, people silhouettes chatting, cozy travel atmosphere, warm tones."
+  },
+  "tags": [
+    {
+      "name": "Grammar",
+      "description": "Subjunctive, relative clauses, complex connectives, past narrative (pretérito/imperfecto)"
+    },
+    {
+      "name": "Vocabulary",
+      "description": "Accommodation, socialising, games, reflection, life and meaning"
+    },
+    {
+      "name": "Themes",
+      "description": "Travel, meaningful conversations, life questions, learning from others, slowing down"
+    }
+  ],
+  "content": [
+    {
+      "type": "sentence",
+      "text": "Durante un viaje me alojé en un hostal cuya terraza en la azotea era el lugar donde todo el mundo se reunía.",
+      "translation": "During a trip I stayed at a hostel whose rooftop terrace was the place where everyone would get together.",
+      "detailedTranslation": [
+        "cuyo/cuya — whose (relative pronoun)",
+        "se reunía — would get together; reunirse, imperfect"
+      ],
+      "highlights": [
+        {
+          "startIndex": 44,
+          "endIndex": 51,
+          "text": "azotea",
+          "glossaryKey": "azotea"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Al atardecer subíamos a pasar el rato: charlar, reírnos y jugar a lo que saliera.",
+      "translation": "At sunset we would go up to hang out: to chat, laugh and play whatever came up.",
+      "detailedTranslation": [
+        "pasando el rato — hanging out",
+        "saliera — came up; subjunctive after lo que"
+      ],
+      "highlights": [
+        {
+          "startIndex": 28,
+          "endIndex": 40,
+          "text": "pasar el rato",
+          "glossaryKey": "pasar el rato"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Ahí conocí a mucha gente — viajeros de todas partes, con ganas de contar historias y de escuchar.",
+      "translation": "There I met a lot of people — travellers from everywhere, keen to tell stories and to listen.",
+      "detailedTranslation": []
+    },
+    {
+      "type": "sentence",
+      "text": "Hablamos de mil cosas, jugamos a juegos de mesa y en un momento alguien sacó una baraja.",
+      "translation": "We talked about a thousand things, we played board games and at some point someone brought out a deck of cards.",
+      "detailedTranslation": [],
+      "highlights": [
+        {
+          "startIndex": 58,
+          "endIndex": 64,
+          "text": "baraja",
+          "glossaryKey": "baraja"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "filename": "azotea_caja_preguntas_terraza_gente.png",
+      "generation_prompt": "Rooftop terrace of a hostel at dusk, diverse travellers chatting and laughing, string lights, plants, relaxed atmosphere."
+    },
+    {
+      "type": "sentence",
+      "text": "Un tipo en particular me llamó la atención: Gio, italiano, tranquilo y con una sonrisa fácil.",
+      "translation": "One guy in particular caught my attention: Gio, Italian, laid-back and with an easy smile.",
+      "detailedTranslation": ["me llamó la atención — caught my attention; llamar la atención"]
+    },
+    {
+      "type": "sentence",
+      "text": "Traía un juego de cartas que guardaba dentro de una caja misteriosa, de madera oscura.",
+      "translation": "He had brought a card game that he kept inside a mysterious box, made of dark wood.",
+      "detailedTranslation": ["Traía — he had brought; traer, imperfect"]
+    },
+    {
+      "type": "sentence",
+      "text": "Me explicó las reglas: cada uno debía sacar una carta al azar y leer en voz alta la pregunta que llevaba escrita.",
+      "translation": "He explained the rules: each person had to draw a card at random and read aloud the question written on it.",
+      "detailedTranslation": [],
+      "highlights": [
+        {
+          "startIndex": 52,
+          "endIndex": 60,
+          "text": "al azar",
+          "glossaryKey": "al azar"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Eran preguntas sobre la vida, sobre lo que importa de verdad — nada trivial.",
+      "translation": "They were questions about life, about what really matters — nothing trivial.",
+      "detailedTranslation": []
+    },
+    {
+      "type": "sentence",
+      "text": "Quien sacaba la carta tenía que responder delante de todos, en la ronda, y los demás escuchaban en silencio.",
+      "translation": "Whoever drew the card had to answer in front of everyone, in the circle, and the rest would listen in silence.",
+      "detailedTranslation": []
+    },
+    {
+      "type": "image",
+      "filename": "azotea_caja_preguntas_gio_caja.png",
+      "generation_prompt": "Friendly Italian man in his thirties holding a small dark wooden box, small group around him on a rooftop at night, curious and warm mood."
+    },
+    {
+      "type": "sentence",
+      "text": "No llegamos a jugar mucho, solo unas cuantas rondas; pero cada pregunta daba para pensar.",
+      "translation": "We didn't end up playing that much, just a few rounds; but each question gave you something to think about.",
+      "detailedTranslation": [],
+      "highlights": [
+        {
+          "startIndex": 62,
+          "endIndex": 78,
+          "text": "daba para pensar",
+          "glossaryKey": "dar para pensar"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Yo estaba tan impresionado por las cartas que le pregunté a Gio si podía ver el resto de preguntas.",
+      "translation": "I was so impressed by the cards that I asked Gio if I could see the rest of the questions.",
+      "detailedTranslation": ["tan ... que — so ... that"]
+    },
+    {
+      "type": "sentence",
+      "text": "Él me miró con calma y me dijo: «¿Por qué querrías hacer eso?»",
+      "translation": "He looked at me calmly and said: \"Why would you want to do that?\"",
+      "detailedTranslation": ["querrías — you would want; conditional of querer"]
+    },
+    {
+      "type": "sentence",
+      "text": "La pregunta me dejó callado; al principio me pareció rara, pero en seguida le vi el sentido.",
+      "translation": "The question left me speechless; at first it struck me as odd, but I soon saw the sense in it.",
+      "detailedTranslation": ["le vi el sentido — I saw the sense in it; ver el sentido"]
+    },
+    {
+      "type": "sentence",
+      "text": "Si más adelante iba a seguir jugando, ¿para qué querer leerlas todas de golpe?",
+      "translation": "If I was going to keep playing later, why would I want to read them all at once?",
+      "detailedTranslation": [],
+      "highlights": [
+        {
+          "startIndex": 52,
+          "endIndex": 61,
+          "text": "de golpe",
+          "glossaryKey": "de golpe"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Apenas podemos responder bien una pregunta a la vez; las demás pueden esperar.",
+      "translation": "We can barely answer one question properly at a time; the rest can wait.",
+      "detailedTranslation": []
+    },
+    {
+      "type": "image",
+      "filename": "azotea_caja_preguntas_ronda_carta.png",
+      "generation_prompt": "Group of people in a circle on a rooftop at night, one person holding a card, thoughtful and attentive faces, string lights, intimate atmosphere."
+    },
+    {
+      "type": "sentence",
+      "text": "Gio me enseñó mucho esa noche, sin dar lecciones: sobre todo por la forma en que hablaba.",
+      "translation": "Gio taught me a lot that night, without lecturing: above all by the way he spoke.",
+      "detailedTranslation": []
+    },
+    {
+      "type": "sentence",
+      "text": "Hablaba muy despacio, con pausas largas, y todo el mundo quería escucharle.",
+      "translation": "He spoke very slowly, with long pauses, and everyone wanted to listen to him.",
+      "detailedTranslation": []
+    },
+    {
+      "type": "sentence",
+      "text": "Parecía tener una especie de aura invisible que hacía que la gente se quedara en silencio cuando terminaba de hablar.",
+      "translation": "He seemed to have a kind of invisible aura that made people fall silent when he finished speaking.",
+      "detailedTranslation": [],
+      "highlights": [
+        {
+          "startIndex": 28,
+          "endIndex": 43,
+          "text": "aura invisible",
+          "glossaryKey": "aura"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Ese silencio no era incómodo, sino cómodo — como si hubiera espacio para pensar.",
+      "translation": "That silence wasn't awkward, but comfortable — as if there were space to think.",
+      "detailedTranslation": ["hubiera — there were; subjunctive in como si"]
+    },
+    {
+      "type": "sentence",
+      "text": "Su manera de estar en el mundo me motivó tanto que, al volver a casa, me puse a crear un juego de cartas parecido.",
+      "translation": "His way of being in the world motivated me so much that, when I got back home, I set about creating a similar card game.",
+      "detailedTranslation": ["me puse a — I set about; ponerse a + infinitive"]
+    },
+    {
+      "type": "image",
+      "filename": "azotea_caja_preguntas_casa_crear.png",
+      "generation_prompt": "Cozy desk at home with blank cards or notebook, hand writing, warm lamp, creative and reflective mood, inspired by travel."
+    },
+    {
+      "type": "sentence",
+      "text": "Todavía lo uso con amigos: una caja, unas preguntas y la misma magia de escuchar y pensar en alto.",
+      "translation": "I still use it with friends: a box, some questions and the same magic of listening and thinking out loud.",
+      "detailedTranslation": ["pensar en alto — to think out loud"]
+    }
+  ],
+  "glossary": {
+    "azotea": {
+      "translation": "rooftop, flat roof",
+      "explanation": "Feminine noun. The flat top of a building, often used as a terrace. Muy común en hostales y edificios en países cálidos."
+    },
+    "pasar el rato": {
+      "translation": "to hang out, pass the time",
+      "explanation": "Expression. Pasamos el rato = we hung out. Often used with friends or in relaxed settings."
+    },
+    "baraja": {
+      "translation": "deck of cards",
+      "explanation": "Feminine noun. A set of playing cards. Sacar una baraja = to bring out / produce a deck."
+    },
+    "al azar": {
+      "translation": "at random",
+      "explanation": "Adverbial phrase. Sacar algo al azar = to pick something at random. Sin orden ni plan."
+    },
+    "dar para pensar": {
+      "translation": "to give (you) something to think about",
+      "explanation": "Expression. Dar para + infinitive = to be enough for / to lead to. Esta pregunta da para pensar = this question gives you something to think about."
+    },
+    "de golpe": {
+      "translation": "all at once, in one go",
+      "explanation": "Adverbial phrase. Leer todo de golpe = to read everything at once. Contrast with doing things Poco a poco."
+    },
+    "aura": {
+      "translation": "aura",
+      "explanation": "Feminine noun (same in English). An atmosphere or presence that someone seems to have. Tener aura = to have a certain presence that others feel."
+    }
+  }
+}

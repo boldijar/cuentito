@@ -25,12 +25,27 @@
     {
       "type": "sentence",
       "text": "Hace un año fui a Bali para surfear.",
-      "translation": "A year ago I went to Bali to surf."
+      "translation": "A year ago I went to Bali to surf.",
+      "detailedTranslation": [
+        "Hace (from hacer) — ago; hace + time = ago",
+        "un año — a year",
+        "fui — I went; infinitive ir, 1st person singular pretérito (fui/fuiste/fue)",
+        "a — to",
+        "Bali — Bali",
+        "para — in order to",
+        "surfear — to surf (infinitive)"
+      ]
     },
     {
       "type": "sentence",
       "text": "Necesitaba un medio de transporte para moverme por la isla.",
       "translation": "I needed a means of transport to get around the island.",
+      "detailedTranslation": [
+        "Necesitaba — I needed; infinitive necesitar, imperfect",
+        "medio de transporte — means of transport",
+        "para — in order to",
+        "moverme — to get around (reflexive); infinitive moverse"
+      ],
       "highlights": [
         {
           "startIndex": 14,
@@ -49,6 +64,11 @@
       "type": "sentence",
       "text": "Alquilé una scooter cerca de la playa.",
       "translation": "I rented a scooter near the beach.",
+      "detailedTranslation": [
+        "Alquilé — I rented; infinitive alquilar, 1st person pretérito",
+        "cerca de — near",
+        "la playa — the beach"
+      ],
       "highlights": [
         {
           "startIndex": 0,
@@ -61,12 +81,19 @@
     {
       "type": "sentence",
       "text": "El dueño me dio las llaves y un casco, pero no me explicó nada sobre el tráfico.",
-      "translation": "The owner gave me the keys and a helmet, but he didn't explain anything about the traffic."
+      "translation": "The owner gave me the keys and a helmet, but he didn't explain anything about the traffic.",
+      "detailedTranslation": []
     },
     {
       "type": "sentence",
       "text": "Salí a la carretera y empecé a conducir por la derecha, como en mi país.",
       "translation": "I went out onto the road and started driving on the right, like in my country.",
+      "detailedTranslation": [
+        "Salí — I went out; infinitive salir, pretérito",
+        "empecé — I started; infinitive empezar, pretérito",
+        "conducir — to drive (infinitive)",
+        "por la derecha — on the right"
+      ],
       "highlights": [
         {
           "startIndex": 44,
@@ -79,12 +106,14 @@
     {
       "type": "sentence",
       "text": "Nadie me dijo que en Indonesia se conduce por la izquierda.",
-      "translation": "Nobody told me that in Indonesia you drive on the left."
+      "translation": "Nobody told me that in Indonesia you drive on the left.",
+      "detailedTranslation": []
     },
     {
       "type": "sentence",
       "text": "Los primeros días todo parecía normal.",
-      "translation": "The first few days everything seemed normal."
+      "translation": "The first few days everything seemed normal.",
+      "detailedTranslation": []
     },
     {
       "type": "image",
@@ -94,12 +123,20 @@
     {
       "type": "sentence",
       "text": "Iba al surf por la mañana y volvía por la tarde.",
-      "translation": "I used to go surfing in the morning and come back in the afternoon."
+      "translation": "I used to go surfing in the morning and come back in the afternoon.",
+      "detailedTranslation": [
+        "Iba — I used to go; infinitive ir, imperfect",
+        "volvía — I used to come back; infinitive volver, imperfect"
+      ]
     },
     {
       "type": "sentence",
       "text": "A veces me sentía un poco raro cuando los coches me adelantaban.",
       "translation": "Sometimes I felt a bit strange when cars overtook me.",
+      "detailedTranslation": [
+        "sentía — I felt; infinitive sentir, imperfect",
+        "adelantaban — they overtook; infinitive adelantar, imperfect"
+      ],
       "highlights": [
         {
           "startIndex": 52,
@@ -112,22 +149,29 @@
     {
       "type": "sentence",
       "text": "Pensaba que los conductores en Bali eran muy atrevidos.",
-      "translation": "I thought the drivers in Bali were very bold."
+      "translation": "I thought the drivers in Bali were very bold.",
+      "detailedTranslation": []
     },
     {
       "type": "sentence",
       "text": "Un día un turista me gritó desde su coche: \"¡Estás en el lado equivocado!\"",
-      "translation": "One day a tourist shouted at me from his car: \"You're on the wrong side!\""
+      "translation": "One day a tourist shouted at me from his car: \"You're on the wrong side!\"",
+      "detailedTranslation": ["gritó — he shouted; infinitive gritar, 3rd person pretérito"]
     },
     {
       "type": "sentence",
       "text": "No entendí bien y seguí mi camino.",
-      "translation": "I didn't understand well and continued on my way."
+      "translation": "I didn't understand well and continued on my way.",
+      "detailedTranslation": [
+        "entendí — I understood; infinitive entender, pretérito",
+        "seguí — I continued; infinitive seguir, pretérito (e→i)"
+      ]
     },
     {
       "type": "sentence",
       "text": "Al tercer día, otra persona me hizo señas para que me cambiara de carril.",
       "translation": "On the third day, another person waved at me to change lanes.",
+      "detailedTranslation": ["hizo señas — waved; hacer señas = to gesture"],
       "highlights": [
         {
           "startIndex": 36,
@@ -141,6 +185,10 @@
       "type": "sentence",
       "text": "Entonces lo busqué en internet y descubrí la verdad.",
       "translation": "Then I looked it up on the internet and discovered the truth.",
+      "detailedTranslation": [
+        "busqué — I looked up; infinitive buscar, pretérito (c→qu)",
+        "descubrí — I discovered; infinitive descubrir, pretérito"
+      ],
       "highlights": [
         {
           "startIndex": 33,
@@ -158,22 +206,26 @@
     {
       "type": "sentence",
       "text": "En Indonesia se conduce por la izquierda, igual que en Reino Unido o Japón.",
-      "translation": "In Indonesia you drive on the left, just like in the UK or Japan."
+      "translation": "In Indonesia you drive on the left, just like in the UK or Japan.",
+      "detailedTranslation": []
     },
     {
       "type": "sentence",
       "text": "Yo había estado conduciendo por el lado equivocado durante tres días.",
-      "translation": "I had been driving on the wrong side for three days."
+      "translation": "I had been driving on the wrong side for three days.",
+      "detailedTranslation": ["había estado conduciendo — had been driving; past perfect continuous"]
     },
     {
       "type": "sentence",
       "text": "Menos mal que no pasó nada grave.",
-      "translation": "Thank goodness nothing serious happened."
+      "translation": "Thank goodness nothing serious happened.",
+      "detailedTranslation": ["Menos mal — thank goodness (lit. less bad)"]
     },
     {
       "type": "sentence",
       "text": "Desde entonces siempre pregunto por las normas de circulación cuando viajo.",
-      "translation": "Since then I always ask about the traffic rules when I travel."
+      "translation": "Since then I always ask about the traffic rules when I travel.",
+      "detailedTranslation": ["pregunto — I ask; infinitive preguntar, present", "viajo — I travel; infinitive viajar, present"]
     }
   ],
   "glossary": {

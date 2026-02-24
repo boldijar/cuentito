@@ -14,9 +14,9 @@ from pathlib import Path
 STORIES_DIR = Path("stories")
 IMAGES_DIR = Path("images")
 BASE_PROMPT = (
-    "I am building a story app where I write different story. I need to generate images. "
-    "Always use this style, transparent background and black lines, like a drawn sketch of the actual prompt. And no text. "
-    "Aspect ratio 16:9. Generate image for this prompt: "
+    "Style to generate image: white bg, and only black lines, like a hand drawn pencil sketch. Not realistic, but a sketch. Not too much details. No shades or other colors. Ignore any colors in the prompt."
+    "Never draw text"
+    "Aspect ratio 16:9. Generate image for this prompt:  "
 )
 
 

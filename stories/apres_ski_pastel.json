@@ -25,12 +25,19 @@
     {
       "type": "sentence",
       "text": "Una vez fui a hacer snowboard a las montañas de Rumanía.",
-      "translation": "Once I went snowboarding in the mountains of Romania."
+      "translation": "Once I went snowboarding in the mountains of Romania.",
+      "detailedTranslation": [
+        "Una vez — once",
+        "fui — I went; infinitive ir, 1st person pretérito",
+        "a hacer — to do (infinitive hacer); ir a + infinitive = to go (do something)",
+        "snowboard — snowboarding (loan word)"
+      ]
     },
     {
       "type": "sentence",
       "text": "Sabía que hay un après-ski en medio de la pista con pastelitos.",
       "translation": "I knew there is an après-ski in the middle of the slope with little pastries.",
+      "detailedTranslation": ["Sabía — I knew; infinitive saber, imperfect", "hay — there is/are; from haber"],
       "highlights": [
         {
           "startIndex": 17,
@@ -49,7 +56,8 @@
     {
       "type": "sentence",
       "text": "No sabíamos cómo llegar pero al final alguien nos dijo el camino.",
-      "translation": "We didn't know how to get there but in the end someone told us the way."
+      "translation": "We didn't know how to get there but in the end someone told us the way.",
+      "detailedTranslation": ["sabíamos — we knew; infinitive saber, imperfect", "llegar — to get there (infinitive)", "dijo — told; infinitive decir, 3rd person pretérito (e→i)"]
     },
     {
       "type": "image",
@@ -59,12 +67,14 @@
     {
       "type": "sentence",
       "text": "Encontramos el lugar y bajamos por esa pista.",
-      "translation": "We found the place and went down that slope."
+      "translation": "We found the place and went down that slope.",
+      "detailedTranslation": ["Encontramos — we found; infinitive encontrar", "bajamos — we went down; infinitive bajar"]
     },
     {
       "type": "sentence",
       "text": "En una parte la pista era muy empinada y corta.",
       "translation": "In one part the slope was very steep and short.",
+      "detailedTranslation": ["era — was; infinitive ser, imperfect"],
       "highlights": [
         {
           "startIndex": 30,
@@ -78,6 +88,7 @@
       "type": "sentence",
       "text": "Después a la derecha la pista iba más lento y no daba miedo.",
       "translation": "Then to the right the slope went slower and it wasn't scary.",
+      "detailedTranslation": ["iba — went; infinitive ir, imperfect (slope 'went')", "daba miedo — was scary; dar miedo = to be scary"],
       "highlights": [
         {
           "startIndex": 49,
@@ -95,17 +106,20 @@
     {
       "type": "sentence",
       "text": "¡Era genial!",
-      "translation": "It was great!"
+      "translation": "It was great!",
+      "detailedTranslation": ["Era — was; infinitive ser, imperfect", "genial — great"]
     },
     {
       "type": "sentence",
       "text": "Llegamos al après-ski pero ya no tenían pastelitos.",
-      "translation": "We arrived at the après-ski but they didn't have little pastries anymore."
+      "translation": "We arrived at the après-ski but they didn't have little pastries anymore.",
+      "detailedTranslation": ["Llegamos — we arrived; infinitive llegar", "tenían — they had; infinitive tener, imperfect"]
     },
     {
       "type": "sentence",
       "text": "Decidimos que ese trozo de pista era nuestro pastelito.",
       "translation": "We decided that that bit of slope was our little pastry.",
+      "detailedTranslation": ["Decidimos — we decided; infinitive decidir", "era — was; ser, imperfect"],
       "highlights": [
         {
           "startIndex": 18,
@@ -130,6 +144,7 @@
       "type": "sentence",
       "text": "Desde entonces \"ir a por un pastelito\" significa bajar por esa pista.",
       "translation": "Since then \"going for a little pastry\" means going down that slope.",
+      "detailedTranslation": ["Desde entonces — since then", "significa — means; infinitive significar"],
       "highlights": [
         {
           "startIndex": 39,
@@ -142,12 +157,14 @@
     {
       "type": "sentence",
       "text": "Ese recorrido es nuestro pastelito favorito.",
-      "translation": "That run is our favourite little pastry."
+      "translation": "That run is our favourite little pastry.",
+      "detailedTranslation": ["recorrido — run, route", "es — is; infinitive ser"]
     },
     {
       "type": "sentence",
       "text": "La montaña nos dio algo mejor que un dulce.",
       "translation": "The mountain gave us something better than a sweet.",
+      "detailedTranslation": ["dio — gave; infinitive dar, 3rd person pretérito"],
       "highlights": [
         {
           "startIndex": 37,

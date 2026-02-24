@@ -98,6 +98,11 @@
             "type": { "const": "sentence" },
             "text": { "type": "string", "description": "Sentence in story language" },
             "translation": { "type": "string", "description": "English translation" },
+            "detailedTranslation": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Bullet points: word-by-word or phrase explanation (infinitive for verbs, how formed, etc.)"
+            },
             "highlights": {
               "type": "array",
               "items": { "$ref": "#/definitions/Highlight" },
