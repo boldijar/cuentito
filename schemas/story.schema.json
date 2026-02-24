@@ -1,0 +1,121 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://spanish-story.app/schemas/story.schema.json",
+  "title": "Story",
+  "description": "A story for reading/listening. Content is in the story language (e.g. Spanish); translation is always in English.",
+  "type": "object",
+  "required": ["title", "level", "content"],
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Story title in the story language"
+    },
+    "titleTranslation": {
+      "type": "string",
+      "description": "Story title in English"
+    },
+    "level": {
+      "type": "string",
+      "enum": ["A1", "A2", "B1", "B2", "C1", "C2"],
+      "description": "CEFR level of the story"
+    },
+    "language": {
+      "type": "string",
+      "description": "Story content language (e.g. es). Translation is always English.",
+      "default": "es"
+    },
+    "thumbnail": {
+      "$ref": "#/definitions/ImageAsset",
+      "description": "Thumbnail image for the story (filename + prompt for generation)"
+    },
+    "tags": {
+      "type": "array",
+      "description": "Topics covered (grammar, vocabulary, themes)",
+      "items": { "$ref": "#/definitions/Tag" }
+    },
+    "content": {
+      "type": "array",
+      "description": "Ordered content blocks: sentences, images, etc.",
+      "items": { "$ref": "#/definitions/ContentItem" }
+    },
+    "glossary": {
+      "type": "object",
+      "description": "Definitions for highlighted words. Keys match highlight.glossaryKey. Shown at bottom of page.",
+      "additionalProperties": { "$ref": "#/definitions/GlossaryEntry" }
+    }
+  },
+  "definitions": {
+    "ImageAsset": {
+      "type": "object",
+      "description": "Image with filename and AI generation prompt",
+      "required": ["filename", "generation_prompt"],
+      "properties": {
+        "filename": {
+          "type": "string",
+          "description": "Filename including extension, e.g. story_name_<what_is_about_very_short>.png"
+        },
+        "generation_prompt": {
+          "type": "string",
+          "description": "Prompt text used to generate the image with AI"
+        }
+      }
+    },
+    "Tag": {
+      "type": "object",
+      "required": ["name", "description"],
+      "properties": {
+        "name": { "type": "string", "description": "Tag name (e.g. Grammar, Vocabulary)" },
+        "description": { "type": "string", "description": "What this tag covers (e.g. Present tense, expressing likes)" }
+      }
+    },
+    "Highlight": {
+      "type": "object",
+      "description": "A span of text to highlight within a sentence",
+      "required": ["startIndex", "endIndex", "text", "glossaryKey"],
+      "properties": {
+        "startIndex": { "type": "integer", "minimum": 0, "description": "Start character index (inclusive)" },
+        "endIndex": { "type": "integer", "minimum": 0, "description": "End character index (exclusive)" },
+        "text": { "type": "string", "description": "The highlighted text (for display/validation)" },
+        "glossaryKey": { "type": "string", "description": "Key in glossary for translation and explanation" }
+      }
+    },
+    "GlossaryEntry": {
+      "type": "object",
+      "description": "Short translation and form/usage explanation for a highlighted word",
+      "required": ["translation", "explanation"],
+      "properties": {
+        "translation": { "type": "string", "description": "Very short English translation" },
+        "explanation": { "type": "string", "description": "Brief explanation about form or usage" }
+      }
+    },
+    "ContentItem": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "A sentence with optional highlighted words",
+          "required": ["type", "text", "translation"],
+          "properties": {
+            "type": { "const": "sentence" },
+            "text": { "type": "string", "description": "Sentence in story language" },
+            "translation": { "type": "string", "description": "English translation" },
+            "highlights": {
+              "type": "array",
+              "items": { "$ref": "#/definitions/Highlight" },
+              "description": "Optional spans to highlight; each links to glossary"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "description": "An image with filename and AI generation prompt",
+          "required": ["type", "filename", "generation_prompt"],
+          "properties": {
+            "type": { "const": "image" },
+            "filename": { "type": "string", "description": "e.g. story_name_<what_is_about_very_short>" },
+            "generation_prompt": { "type": "string", "description": "Prompt for AI image generation" }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Story reader</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 0 auto; padding: 1rem 1.5rem; line-height: 1.6; color: #1a1a1a; }
+    header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #e0e0e0; }
+    h1 { margin: 0; font-size: 1.5rem; }
+    .meta { font-size: 0.9rem; color: #555; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+    .tag { background: #f0f0f0; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.85rem; }
+    .tag strong { display: block; }
+    .switch-row { display: flex; align-items: center; gap: 0.5rem; }
+    .switch-row label { cursor: pointer; user-select: none; }
+    .content { margin: 1rem 0; }
+    .sentence-block { margin-bottom: 0.5rem; }
+    .sentence-block.show-translation { margin-bottom: 1rem; }
+    .sentence-block.show-translation .translation { display: block; }
+    .sentence-block .translation { display: none; margin-top: 0.25rem; padding-left: 1rem; font-size: 0.95rem; color: #555; border-left: 3px solid #ccc; }
+    .sentence-block .text { }
+    .sentence-block .text .hl { background: #fff3cd; padding: 0 2px; border-radius: 2px; }
+    .content img { max-width: 100%; height: auto; display: block; margin: 1rem 0; border-radius: 8px; }
+    .content img.hide { display: none !important; }
+    .glossary { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e0e0e0; }
+    .glossary h2 { font-size: 1.1rem; margin-bottom: 0.75rem; }
+    .glossary dl { margin: 0; }
+    .glossary dt { font-weight: 600; margin-top: 0.75rem; }
+    .glossary dt:first-child { margin-top: 0; }
+    .glossary dd { margin: 0.25rem 0 0 0; color: #444; font-size: 0.95rem; }
+    /* Dark mode */
+    body.dark { background: #1a1a1a; color: #e0e0e0; }
+    body.dark header { border-bottom-color: #404040; }
+    body.dark .meta { color: #aaa; }
+    body.dark .tag { background: #2d2d2d; color: #ccc; }
+    body.dark .sentence-block .translation { color: #aaa; border-left-color: #555; }
+    body.dark .sentence-block .text .hl { background: #4a3f1a; color: #f0e6c8; }
+    body.dark .glossary { border-top-color: #404040; }
+    body.dark .glossary h2 { color: #e0e0e0; }
+    body.dark .glossary dt { color: #e8e8e8; }
+    body.dark .glossary dd { color: #aaa; }
+    body.dark .content img:not(.hide) { filter: invert(1); }
+    .back { margin-bottom: 1rem; }
+    .back a { color: #666; text-decoration: none; font-size: 0.9rem; }
+    .back a:hover { text-decoration: underline; }
+    body.dark .back a { color: #aaa; }
+    .loading, .error { padding: 2rem; text-align: center; color: #666; }
+    .error { color: #c00; }
+  </style>
+</head>
+<body>
+  <div class="back"><a href="index.html">← All stories</a></div>
+  <header>
+    <div>
+      <h1 id="title"></h1>
+      <p class="meta" id="meta"></p>
+      <div class="tags" id="tags"></div>
+    </div>
+    <div class="switch-row" style="flex-wrap: wrap; gap: 1rem;">
+      <div class="switch-row">
+        <input type="checkbox" id="showTranslations" />
+        <label for="showTranslations">Show translations under sentences</label>
+      </div>
+      <div class="switch-row">
+        <input type="checkbox" id="darkMode" />
+        <label for="darkMode">Dark mode</label>
+      </div>
+    </div>
+  </header>
+  <main class="content" id="content"></main>
+  <footer class="glossary" id="glossary"></footer>
+
+  <script>
+    (function () {
+      function getQuery() {
+        var q = {};
+        (window.location.search || '').replace(/^\?/, '').split('&').forEach(function (p) {
+          var kv = p.split('=');
+          if (kv.length === 2) q[decodeURIComponent(kv[0])] = decodeURIComponent(kv[1]);
+        });
+        return q;
+      }
+
+      var name = getQuery().name;
+      if (!name || !/^[a-z0-9_]+$/i.test(name)) {
+        document.getElementById('content').innerHTML = '<p class="error">Missing or invalid story name. Use <code>story.html?name=story_id</code></p>';
+        document.querySelector('header').style.display = 'none';
+        return;
+      }
+
+      var content = document.getElementById('content');
+      content.innerHTML = '<p class="loading">Loading story…</p>';
+
+      fetch('stories/' + name + '.json')
+        .then(function (r) {
+          if (!r.ok) throw new Error('Story not found');
+          return r.json();
+        })
+        .then(function (story) {
+          content.innerHTML = '';
+          document.title = story.title + ' — Spanish Stories';
+
+          document.getElementById('title').textContent = story.title;
+          var meta = story.level + ' · ' + (story.language || 'es');
+          if (story.titleTranslation) meta += ' — ' + story.titleTranslation;
+          document.getElementById('meta').textContent = meta;
+
+          var tagsHtml = '';
+          if (story.tags && story.tags.length) {
+            story.tags.forEach(function (t) {
+              tagsHtml += '<span class="tag"><strong>' + escapeHtml(t.name) + '</strong> ' + escapeHtml(t.description) + '</span>';
+            });
+          }
+          document.getElementById('tags').innerHTML = tagsHtml || '—';
+
+          var showTranslations = document.getElementById('showTranslations');
+
+          function renderContent() {
+            var show = showTranslations.checked;
+            content.innerHTML = '';
+            story.content.forEach(function (item) {
+              if (item.type === 'sentence') {
+                var block = document.createElement('div');
+                block.className = 'sentence-block' + (show ? ' show-translation' : '');
+                var text = item.text;
+                if (item.highlights && item.highlights.length) {
+                  var parts = [];
+                  var last = 0;
+                  item.highlights.slice().sort(function (a, b) { return a.startIndex - b.startIndex; }).forEach(function (h) {
+                    if (h.startIndex > last) parts.push({ type: 'plain', s: text.slice(last, h.startIndex) });
+                    parts.push({ type: 'hl', s: text.slice(h.startIndex, h.endIndex) });
+                    last = h.endIndex;
+                  });
+                  if (last < text.length) parts.push({ type: 'plain', s: text.slice(last) });
+                  var span = document.createElement('span');
+                  span.className = 'text';
+                  parts.forEach(function (p) {
+                    if (p.type === 'hl') {
+                      var hl = document.createElement('span');
+                      hl.className = 'hl';
+                      hl.textContent = p.s;
+                      span.appendChild(hl);
+                    } else {
+                      span.appendChild(document.createTextNode(p.s));
+                    }
+                  });
+                  block.appendChild(span);
+                } else {
+                  var span = document.createElement('span');
+                  span.className = 'text';
+                  span.textContent = text;
+                  block.appendChild(span);
+                }
+                var trans = document.createElement('div');
+                trans.className = 'translation';
+                trans.textContent = item.translation || '';
+                block.appendChild(trans);
+                content.appendChild(block);
+              } else if (item.type === 'image') {
+                var img = document.createElement('img');
+                img.alt = item.generation_prompt || item.filename;
+                img.loading = 'lazy';
+                img.onerror = function () { this.classList.add('hide'); };
+                img.src = 'images/' + item.filename;
+                content.appendChild(img);
+              }
+            });
+          }
+
+          showTranslations.addEventListener('change', renderContent);
+          renderContent();
+
+          var darkMode = document.getElementById('darkMode');
+          try {
+            if (localStorage.getItem('darkMode') === '1') { darkMode.checked = true; document.body.classList.add('dark'); }
+          } catch (e) {}
+          darkMode.addEventListener('change', function () {
+            document.body.classList.toggle('dark', darkMode.checked);
+            try { localStorage.setItem('darkMode', darkMode.checked ? '1' : '0'); } catch (e) {}
+          });
+
+          var gloss = story.glossary;
+          if (gloss && Object.keys(gloss).length) {
+            var gEl = document.getElementById('glossary');
+            var html = '<h2>Glossary</h2><dl>';
+            Object.keys(gloss).forEach(function (key) {
+              var e = gloss[key];
+              html += '<dt>' + escapeHtml(key) + ' — ' + escapeHtml(e.translation) + '</dt>';
+              html += '<dd>' + escapeHtml(e.explanation) + '</dd>';
+            });
+            html += '</dl>';
+            gEl.innerHTML = html;
+          }
+        })
+        .catch(function () {
+          content.innerHTML = '<p class="error">Story not found or failed to load. <a href="index.html">Back to stories</a></p>';
+          document.querySelector('header').style.display = 'none';
+        });
+
+      function escapeHtml(s) {
+        if (s == null) return '';
+        var div = document.createElement('div');
+        div.textContent = s;
+        return div.innerHTML;
+      }
+    })();
+  </script>
+</body>
+</html>
