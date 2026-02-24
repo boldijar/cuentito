@@ -1,0 +1,504 @@
+{
+  "title": "Bad Bunny - DtMf (DeBÍ TiRAR MáS FOToS)",
+  "titleTranslation": "Bad Bunny - I Should Have Taken More Photos",
+  "level": "B2",
+  "language": "es",
+  "thumbnail": {
+    "filename": "bad_bunny_dtmf_thumbnail.png",
+    "generation_prompt": "Bad Bunny style, San Juan Puerto Rico sunset, nostalgic summer vibe, palm trees, ocean, warm colors, reggaeton mood."
+  },
+  "tags": [
+    {
+      "name": "Grammar",
+      "description": "Gerunds, past tense, colloquial tú, Caribbean Spanish"
+    },
+    {
+      "name": "Vocabulary",
+      "description": "Slang, Puerto Rican Spanish, shortened forms, music and feelings"
+    },
+    {
+      "name": "Themes",
+      "description": "Nostalgia, regret, missing someone, photos and memories, Puerto Rico"
+    }
+  ],
+  "content": [
+    {
+      "type": "sentence",
+      "text": "Otro sunset bonito que veo en San Juan",
+      "translation": "Another beautiful sunset I see in San Juan",
+      "detailedTranslation": [
+        "sunset — English loan word, same meaning (beautiful sunset)",
+        "San Juan — capital of Puerto Rico"
+      ],
+      "highlights": [
+        {
+          "startIndex": 5,
+          "endIndex": 11,
+          "text": "sunset",
+          "glossaryKey": "sunset"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Disfrutando de todas esas cosas que extrañan los que se van",
+      "translation": "Enjoying all those things that those who leave miss",
+      "detailedTranslation": [
+        "Disfrutando — enjoying; gerund of disfrutar",
+        "extrañan — they miss; infinitive extrañar (los que se van = those who leave)"
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Disfrutando de noche' de esas que ya no se dan",
+      "translation": "Enjoying nights like those that don't happen anymore",
+      "detailedTranslation": [
+        "noche' — shortened for noches (dropped 's' at end, common in Caribbean/colloquial speech)",
+        "se dan — they happen; darse = to occur, to happen"
+      ],
+      "highlights": [
+        {
+          "startIndex": 17,
+          "endIndex": 24,
+          "text": "noche'",
+          "glossaryKey": "noche'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Que ya no se dan",
+      "translation": "That don't happen anymore",
+      "detailedTranslation": ["ya no se dan — they don't happen anymore; repetition for emphasis"]
+    },
+    {
+      "type": "sentence",
+      "text": "Pero queriendo volver a la última vez",
+      "translation": "But wanting to go back to the last time",
+      "detailedTranslation": ["queriendo — wanting; gerund of querer", "volver a — to go back to"]
+    },
+    {
+      "type": "sentence",
+      "text": "Que a los ojos te miré",
+      "translation": "When I looked at you in the eyes",
+      "detailedTranslation": [
+        "te miré — I looked at you; infinitive mirar, pretérito",
+        "a los ojos — in(to) the eyes (looking someone in the eyes)"
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Y contarte las cosas que no te conté (Te parece' a mi crush, jaja)",
+      "translation": "And tell you the things I didn't tell you (You look like my crush, haha)",
+      "detailedTranslation": [
+        "contarte — to tell you; infinitive contar + te",
+        "conté — I told; contar, pretérito",
+        "Te parece' — you look like; parecer (shortened: pareces → parece')",
+        "crush — English loan; person you have a crush on",
+        "jaja — haha (Spanish onomatopoeia for laughing)"
+      ],
+      "highlights": [
+        {
+          "startIndex": 42,
+          "endIndex": 52,
+          "text": "Te parece'",
+          "glossaryKey": "parece'"
+        },
+        {
+          "startIndex": 56,
+          "endIndex": 61,
+          "text": "crush",
+          "glossaryKey": "crush"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Y tirarte la' foto' que no te tiré (Acho, jura'o te ves bien linda, déjame tirarte una foto)",
+      "translation": "And take the photos of you that I didn't take (Hey man, I swear you look really pretty, let me take a photo of you)",
+      "detailedTranslation": [
+        "tirarte la' foto' — to take (you) the photos; tirar fotos = to take photos (Caribbean/colloquial)",
+        "la' — shortened for las (dropped 's')",
+        "foto' — shortened for fotos",
+        "tiré — I took; tirar, pretérito",
+        "Acho — Puerto Rican slang: dude, man, hey (friendly)",
+        "jura'o — shortened for jurao/jurado = I swear (jura'o = jurado, colloquial)",
+        "tirarte una foto — to take a photo of you"
+      ],
+      "highlights": [
+        {
+          "startIndex": 10,
+          "endIndex": 13,
+          "text": "la'",
+          "glossaryKey": "la'"
+        },
+        {
+          "startIndex": 14,
+          "endIndex": 19,
+          "text": "foto'",
+          "glossaryKey": "foto'"
+        },
+        {
+          "startIndex": 45,
+          "endIndex": 49,
+          "text": "Acho",
+          "glossaryKey": "acho"
+        },
+        {
+          "startIndex": 51,
+          "endIndex": 58,
+          "text": "jura'o",
+          "glossaryKey": "jura'o"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Ey, tengo el pecho pela'o, me dio una matá'",
+      "translation": "Hey, I have my chest bare / my heart broken, it gave me a heart attack",
+      "detailedTranslation": [
+        "pecho pela'o — bare chest; pela'o = pelado (shortened, -ado → -a'o in Caribbean slang)",
+        "matá' — shortened for matada; here = like a 'kill' / heart attack, slang for strong emotion or pain"
+      ],
+      "highlights": [
+        {
+          "startIndex": 22,
+          "endIndex": 30,
+          "text": "pela'o",
+          "glossaryKey": "pela'o"
+        },
+        {
+          "startIndex": 38,
+          "endIndex": 44,
+          "text": "matá'",
+          "glossaryKey": "matá'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "El corazón dándome patá'",
+      "translation": "My heart giving me kicks / pounding",
+      "detailedTranslation": [
+        "patá' — shortened for patadas (kicks); darme patadas = to pound (heart), to give me kicks"
+      ],
+      "highlights": [
+        {
+          "startIndex": 24,
+          "endIndex": 29,
+          "text": "patá'",
+          "glossaryKey": "patá'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Dime, baby, ¿dónde tú está'?",
+      "translation": "Tell me, baby, where are you?",
+      "detailedTranslation": [
+        "baby — English, term of endearment",
+        "tú está' — you are; está' = estás (dropped 's')",
+        "¿dónde tú está'? — Caribbean word order: where you at? (standard: ¿dónde estás tú?)"
+      ],
+      "highlights": [
+        {
+          "startIndex": 11,
+          "endIndex": 16,
+          "text": "baby",
+          "glossaryKey": "baby"
+        },
+        {
+          "startIndex": 24,
+          "endIndex": 30,
+          "text": "está'",
+          "glossaryKey": "está'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Pa' llegarle con RoRo, Julito, Krystal",
+      "translation": "To get to you with RoRo, Julito, Krystal (friends' names)",
+      "detailedTranslation": [
+        "Pa' — shortened for Para (to, in order to)",
+        "llegarle — to get to you; llegar + le (Caribbean 'you')",
+        "RoRo, Julito, Krystal — names of people / crew"
+      ],
+      "highlights": [
+        {
+          "startIndex": 0,
+          "endIndex": 3,
+          "text": "Pa'",
+          "glossaryKey": "pa'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Roig, Edgar, Seba, Óscar, Darnell y Big Jay, tocando batá",
+      "translation": "Roig, Edgar, Seba, Óscar, Darnell and Big Jay, playing batá",
+      "detailedTranslation": [
+        "tocando — playing; gerund of tocar",
+        "batá — Afro-Caribbean drums (batá drums), used in Puerto Rican music"
+      ],
+      "highlights": [
+        {
+          "startIndex": 43,
+          "endIndex": 48,
+          "text": "batá",
+          "glossaryKey": "batá"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Hoy la calle la dejamo' 'esbaratá",
+      "translation": "Today we left the street destroyed / lit",
+      "detailedTranslation": [
+        "dejamo' — we left; shortened for dejamos",
+        "'esbaratá — shortened for esbaratada (destroyed, messed up; here = we tore it up / had a great time)"
+      ],
+      "highlights": [
+        {
+          "startIndex": 22,
+          "endIndex": 29,
+          "text": "dejamo'",
+          "glossaryKey": "dejamo'"
+        },
+        {
+          "startIndex": 24,
+          "endIndex": 33,
+          "text": "'esbaratá",
+          "glossaryKey": "esbaratá"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Y sería cabrón que tú me toque' el güiro",
+      "translation": "And it would be crazy / messed up if you play the güiro on me",
+      "detailedTranslation": [
+        "cabrón — literally 'big goat'; slang: badass, crazy, intense (depends on context)",
+        "toque' — you play; shortened for toques (subjunctive of tocar)",
+        "güiro — percussion instrument (gourd), typical in Puerto Rican and Caribbean music)"
+      ],
+      "highlights": [
+        {
+          "startIndex": 21,
+          "endIndex": 28,
+          "text": "cabrón",
+          "glossaryKey": "cabrón"
+        },
+        {
+          "startIndex": 38,
+          "endIndex": 44,
+          "text": "toque'",
+          "glossaryKey": "toque'"
+        },
+        {
+          "startIndex": 48,
+          "endIndex": 54,
+          "text": "güiro",
+          "glossaryKey": "güiro"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Yo veo tu nombre y me salen suspiro'",
+      "translation": "I see your name and I let out sighs",
+      "detailedTranslation": [
+        "suspiro' — shortened for suspiros (sighs)",
+        "me salen — they come out (of me); salir"
+      ],
+      "highlights": [
+        {
+          "startIndex": 33,
+          "endIndex": 41,
+          "text": "suspiro'",
+          "glossaryKey": "suspiro'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "No sé si son petardo' o si son tiro'",
+      "translation": "I don't know if they're firecrackers or if they're shots",
+      "detailedTranslation": [
+        "petardo' — shortened for petardos (firecrackers; or slang for something lame)",
+        "tiro' — shortened for tiros (shots, gunshots; or 'hits' like hits of emotion)"
+      ],
+      "highlights": [
+        {
+          "startIndex": 15,
+          "endIndex": 23,
+          "text": "petardo'",
+          "glossaryKey": "petardo'"
+        },
+        {
+          "startIndex": 30,
+          "endIndex": 35,
+          "text": "tiro'",
+          "glossaryKey": "tiro'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Mi blanquita, perico, mi kilo",
+      "translation": "My white girl / my light one, perico, my kilo",
+      "detailedTranslation": [
+        "blanquita — affectionate: my light-skinned one, my girl (diminutive of blanca)",
+        "perico — literally parakeet; slang: cocaine (here could be term of endearment or drug reference depending on interpretation)",
+        "kilo — kilo; can be drug slang or just 'my weight' / my person"
+      ],
+      "highlights": [
+        {
+          "startIndex": 3,
+          "endIndex": 12,
+          "text": "blanquita",
+          "glossaryKey": "blanquita"
+        },
+        {
+          "startIndex": 14,
+          "endIndex": 20,
+          "text": "perico",
+          "glossaryKey": "perico"
+        },
+        {
+          "startIndex": 24,
+          "endIndex": 28,
+          "text": "kilo",
+          "glossaryKey": "kilo"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Yo estoy en PR, tranquilo, pero",
+      "translation": "I'm in PR, chillin', but",
+      "detailedTranslation": [
+        "PR — Puerto Rico (abbreviation)",
+        "tranquilo — calm, chillin'; here: I'm good / relaxed"
+      ],
+      "highlights": [
+        {
+          "startIndex": 14,
+          "endIndex": 16,
+          "text": "PR",
+          "glossaryKey": "PR"
+        }
+      ]
+    }
+  ],
+  "glossary": {
+    "sunset": {
+      "translation": "sunset",
+      "explanation": "English loan word; same meaning. Common in Caribbean and urban Spanish."
+    },
+    "noche'": {
+      "translation": "nights (noches)",
+      "explanation": "Shortened form: final 's' dropped and written with apostrophe. Very common in Puerto Rican and Caribbean Spanish in song and speech."
+    },
+    "la'": {
+      "translation": "the (las, plural feminine)",
+      "explanation": "Shortened for 'las'. Same dropping of final 's' as noche', foto', etc."
+    },
+    "foto'": {
+      "translation": "photos (fotos)",
+      "explanation": "Shortened for 'fotos'. Tirar fotos = to take photos (Caribbean/colloquial)."
+    },
+    "parece'": {
+      "translation": "you look like (pareces)",
+      "explanation": "Shortened for 'pareces' (you look like). Te parece' a mi crush = You look like my crush."
+    },
+    "crush": {
+      "translation": "crush",
+      "explanation": "English loan: person you have a romantic crush on."
+    },
+    "acho": {
+      "translation": "hey man, dude",
+      "explanation": "Puerto Rican slang. Friendly interjection, like 'hey' or 'man'. Used a lot in casual speech."
+    },
+    "jura'o": {
+      "translation": "I swear (jurado)",
+      "explanation": "Shortened/colloquial for 'jurado'. Jura'o te ves bien = I swear you look good."
+    },
+    "pela'o": {
+      "translation": "bare, bald (pelado)",
+      "explanation": "Shortened form: -ado → -a'o in Caribbean Spanish. Pecho pela'o = bare chest (or emotionally exposed)."
+    },
+    "matá'": {
+      "translation": "a kill, hit (matada)",
+      "explanation": "Shortened for 'matada'. Here: 'me dio una matá'' = it hit me like a kill / gave me a heart attack (strong emotion)."
+    },
+    "patá'": {
+      "translation": "kicks (patadas)",
+      "explanation": "Shortened for 'patadas'. El corazón dándome patá' = my heart giving me kicks (pounding)."
+    },
+    "baby": {
+      "translation": "baby",
+      "explanation": "English; term of endearment, same as in English."
+    },
+    "está'": {
+      "translation": "you are (estás)",
+      "explanation": "Shortened for 'estás'. ¿Dónde tú está'? = Where are you? (Caribbean word order.)"
+    },
+    "pa'": {
+      "translation": "for, to (para)",
+      "explanation": "Shortened for 'para'. Very common in speech and lyrics (pa' qué, pa' llegar, etc.)."
+    },
+    "batá": {
+      "translation": "batá (drums)",
+      "explanation": "Afro-Caribbean drums, used in Puerto Rican and Cuban music. Often in plural: los batá."
+    },
+    "dejamo'": {
+      "translation": "we left (dejamos)",
+      "explanation": "Shortened for 'dejamos'. La calle la dejamo' = we left the street (in a state)."
+    },
+    "esbaratá": {
+      "translation": "destroyed, messed up (esbaratada)",
+      "explanation": "Shortened for 'esbaratada'. Dejar algo 'esbaratá' = to leave it destroyed / lit (we tore it up)."
+    },
+    "cabrón": {
+      "translation": "badass, crazy, intense",
+      "explanation": "Slang; literally 'big goat'. Can mean tough, crazy, or (in other contexts) insult. Here: 'sería cabrón' = it would be crazy/intense."
+    },
+    "toque'": {
+      "translation": "you play (toques)",
+      "explanation": "Shortened for 'toques' (subjunctive of tocar). Que tú me toque' el güiro = that you play the güiro on me."
+    },
+    "güiro": {
+      "translation": "güiro (instrument)",
+      "explanation": "Percussion instrument (gourd with ridges), typical in Puerto Rican and Caribbean music."
+    },
+    "suspiro'": {
+      "translation": "sighs (suspiros)",
+      "explanation": "Shortened for 'suspiros'. Me salen suspiro' = I let out sighs."
+    },
+    "petardo'": {
+      "translation": "firecrackers (petardos)",
+      "explanation": "Shortened for 'petardos'. Can also be slang for something lame. Here: literal or metaphorical bangs."
+    },
+    "tiro'": {
+      "translation": "shots (tiros)",
+      "explanation": "Shortened for 'tiros'. Can mean gunshots or emotional 'hits'."
+    },
+    "blanquita": {
+      "translation": "my light one, my girl",
+      "explanation": "Affectionate; diminutive of blanca. Mi blanquita = my white girl / my light-skinned one (term of endearment)."
+    },
+    "perico": {
+      "translation": "parakeet; (slang) cocaine",
+      "explanation": "Literally parakeet. In slang often means cocaine. In song context can be term of endearment or double meaning."
+    },
+    "kilo": {
+      "translation": "kilo",
+      "explanation": "Kilo. In drug slang can mean a kilo of drugs; in affectionate context can mean 'my weight' / my person."
+    },
+    "PR": {
+      "translation": "Puerto Rico",
+      "explanation": "Abbreviation for Puerto Rico. Yo estoy en PR = I'm in Puerto Rico."
+    }
+  }
+}
