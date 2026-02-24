@@ -58,8 +58,8 @@
       ],
       "highlights": [
         {
-          "startIndex": 17,
-          "endIndex": 24,
+          "startIndex": 15,
+          "endIndex": 21,
           "text": "noche'",
           "glossaryKey": "noche'"
         }
@@ -69,13 +69,18 @@
       "type": "sentence",
       "text": "Que ya no se dan",
       "translation": "That don't happen anymore",
-      "detailedTranslation": ["ya no se dan — they don't happen anymore; repetition for emphasis"]
+      "detailedTranslation": [
+        "ya no se dan — they don't happen anymore; repetition for emphasis"
+      ]
     },
     {
       "type": "sentence",
       "text": "Pero queriendo volver a la última vez",
       "translation": "But wanting to go back to the last time",
-      "detailedTranslation": ["queriendo — wanting; gerund of querer", "volver a — to go back to"]
+      "detailedTranslation": [
+        "queriendo — wanting; gerund of querer",
+        "volver a — to go back to"
+      ]
     },
     {
       "type": "sentence",
@@ -99,14 +104,14 @@
       ],
       "highlights": [
         {
-          "startIndex": 42,
-          "endIndex": 52,
+          "startIndex": 38,
+          "endIndex": 48,
           "text": "Te parece'",
           "glossaryKey": "parece'"
         },
         {
-          "startIndex": 56,
-          "endIndex": 61,
+          "startIndex": 54,
+          "endIndex": 59,
           "text": "crush",
           "glossaryKey": "crush"
         }
@@ -139,14 +144,14 @@
           "glossaryKey": "foto'"
         },
         {
-          "startIndex": 45,
-          "endIndex": 49,
+          "startIndex": 36,
+          "endIndex": 40,
           "text": "Acho",
           "glossaryKey": "acho"
         },
         {
-          "startIndex": 51,
-          "endIndex": 58,
+          "startIndex": 42,
+          "endIndex": 48,
           "text": "jura'o",
           "glossaryKey": "jura'o"
         }
@@ -162,14 +167,14 @@
       ],
       "highlights": [
         {
-          "startIndex": 22,
-          "endIndex": 30,
+          "startIndex": 19,
+          "endIndex": 25,
           "text": "pela'o",
           "glossaryKey": "pela'o"
         },
         {
           "startIndex": 38,
-          "endIndex": 44,
+          "endIndex": 43,
           "text": "matá'",
           "glossaryKey": "matá'"
         }
@@ -184,8 +189,8 @@
       ],
       "highlights": [
         {
-          "startIndex": 24,
-          "endIndex": 29,
+          "startIndex": 19,
+          "endIndex": 24,
           "text": "patá'",
           "glossaryKey": "patá'"
         }
@@ -202,14 +207,14 @@
       ],
       "highlights": [
         {
-          "startIndex": 11,
-          "endIndex": 16,
+          "startIndex": 6,
+          "endIndex": 10,
           "text": "baby",
           "glossaryKey": "baby"
         },
         {
-          "startIndex": 24,
-          "endIndex": 30,
+          "startIndex": 22,
+          "endIndex": 27,
           "text": "está'",
           "glossaryKey": "está'"
         }
@@ -243,8 +248,8 @@
       ],
       "highlights": [
         {
-          "startIndex": 43,
-          "endIndex": 48,
+          "startIndex": 53,
+          "endIndex": 57,
           "text": "batá",
           "glossaryKey": "batá"
         }
@@ -260,8 +265,8 @@
       ],
       "highlights": [
         {
-          "startIndex": 22,
-          "endIndex": 29,
+          "startIndex": 16,
+          "endIndex": 23,
           "text": "dejamo'",
           "glossaryKey": "dejamo'"
         },
@@ -284,20 +289,20 @@
       ],
       "highlights": [
         {
-          "startIndex": 21,
-          "endIndex": 28,
+          "startIndex": 8,
+          "endIndex": 14,
           "text": "cabrón",
           "glossaryKey": "cabrón"
         },
         {
-          "startIndex": 38,
-          "endIndex": 44,
+          "startIndex": 25,
+          "endIndex": 31,
           "text": "toque'",
           "glossaryKey": "toque'"
         },
         {
-          "startIndex": 48,
-          "endIndex": 54,
+          "startIndex": 35,
+          "endIndex": 40,
           "text": "güiro",
           "glossaryKey": "güiro"
         }
@@ -313,8 +318,8 @@
       ],
       "highlights": [
         {
-          "startIndex": 33,
-          "endIndex": 41,
+          "startIndex": 28,
+          "endIndex": 36,
           "text": "suspiro'",
           "glossaryKey": "suspiro'"
         }
@@ -330,14 +335,14 @@
       ],
       "highlights": [
         {
-          "startIndex": 15,
-          "endIndex": 23,
+          "startIndex": 13,
+          "endIndex": 21,
           "text": "petardo'",
           "glossaryKey": "petardo'"
         },
         {
-          "startIndex": 30,
-          "endIndex": 35,
+          "startIndex": 31,
+          "endIndex": 36,
           "text": "tiro'",
           "glossaryKey": "tiro'"
         }
@@ -366,8 +371,8 @@
           "glossaryKey": "perico"
         },
         {
-          "startIndex": 24,
-          "endIndex": 28,
+          "startIndex": 25,
+          "endIndex": 29,
           "text": "kilo",
           "glossaryKey": "kilo"
         }
@@ -383,11 +388,630 @@
       ],
       "highlights": [
         {
-          "startIndex": 14,
-          "endIndex": 16,
+          "startIndex": 12,
+          "endIndex": 14,
           "text": "PR",
           "glossaryKey": "PR"
         }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Debí tirar más fotos de cuando te tuve",
+      "translation": "I should have taken more photos of when I had you",
+      "detailedTranslation": [
+        "Debí — I should have; deber, pretérito",
+        "te tuve — I had you; tener, pretérito"
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Debí darte más beso' y abrazo' las vece' que pude",
+      "translation": "I should have given you more kisses and hugs the times I could",
+      "detailedTranslation": [
+        "beso' — kisses (besos); shortened",
+        "abrazo' — hugs (abrazos); shortened",
+        "vece' — times (veces); shortened",
+        "pude — I could; poder, pretérito"
+      ],
+      "highlights": [
+        {
+          "startIndex": 15,
+          "endIndex": 20,
+          "text": "beso'",
+          "glossaryKey": "beso'"
+        },
+        {
+          "startIndex": 23,
+          "endIndex": 30,
+          "text": "abrazo'",
+          "glossaryKey": "abrazo'"
+        },
+        {
+          "startIndex": 35,
+          "endIndex": 40,
+          "text": "vece'",
+          "glossaryKey": "vece'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Ey, ojalá que los mío' nunca se muden",
+      "translation": "Hey, I hope mine never move away",
+      "detailedTranslation": [
+        "ojalá que — I hope that (subjunctive)",
+        "mío' — mine, my people (míos); shortened",
+        "se muden — they move (away); mudarse, subjunctive"
+      ],
+      "highlights": [
+        {
+          "startIndex": 18,
+          "endIndex": 22,
+          "text": "mío'",
+          "glossaryKey": "mío'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Y si hoy me emborracho, pues que me ayuden",
+      "translation": "And if I get drunk today, well may they help me",
+      "detailedTranslation": [
+        "me emborracho — I get drunk; emborracharse",
+        "que me ayuden — (may they) help me; subjunctive"
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Debí tirar más foto' de cuando te tuve",
+      "translation": "I should have taken more photos of when I had you",
+      "detailedTranslation": [
+        "foto' — photos (fotos); shortened"
+      ],
+      "highlights": [
+        {
+          "startIndex": 15,
+          "endIndex": 20,
+          "text": "foto'",
+          "glossaryKey": "foto'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Debí darte más beso' y abrazo' las veces que pude",
+      "translation": "I should have given you more kisses and hugs the times I could",
+      "detailedTranslation": [],
+      "highlights": [
+        {
+          "startIndex": 15,
+          "endIndex": 20,
+          "text": "beso'",
+          "glossaryKey": "beso'"
+        },
+        {
+          "startIndex": 23,
+          "endIndex": 30,
+          "text": "abrazo'",
+          "glossaryKey": "abrazo'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Ojalá que los mío' nunca se muden",
+      "translation": "I hope mine never move away",
+      "detailedTranslation": [],
+      "highlights": [
+        {
+          "startIndex": 14,
+          "endIndex": 18,
+          "text": "mío'",
+          "glossaryKey": "mío'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Y si hoy me emborracho, pues que me ayuden",
+      "translation": "And if I get drunk today, well may they help me",
+      "detailedTranslation": []
+    },
+    {
+      "type": "sentence",
+      "text": "Ey, hoy voy a estar con abuelo to'l día, jugando dominó",
+      "translation": "Hey, today I'm gonna be with grandpa all day, playing dominoes",
+      "detailedTranslation": [
+        "to'l — todo el (all the); shortened",
+        "dominó — dominoes (game)"
+      ],
+      "highlights": [
+        {
+          "startIndex": 31,
+          "endIndex": 35,
+          "text": "to'l",
+          "glossaryKey": "to'l"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Si me pregunta si aún pienso en ti, yo le digo que no",
+      "translation": "If he asks me if I still think about you, I tell him no",
+      "detailedTranslation": []
+    },
+    {
+      "type": "sentence",
+      "text": "Que mi estadía cerquita de ti ya se terminó",
+      "translation": "That my stay close to you is already over",
+      "detailedTranslation": [
+        "estadía — stay, time spent",
+        "cerquita — nice and close; diminutive of cerca"
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Ya se terminó, ey",
+      "translation": "It's already over, hey",
+      "detailedTranslation": []
+    },
+    {
+      "type": "sentence",
+      "text": "Que prendan la' máquina', voy pa' Santurce",
+      "translation": "Let them start up the machines, I'm going to Santurce",
+      "detailedTranslation": [
+        "la' máquina' — the machines (las máquinas); shortened",
+        "pa' — to (para); voy pa' = I'm going to",
+        "Santurce — neighborhood in San Juan, PR"
+      ],
+      "highlights": [
+        {
+          "startIndex": 12,
+          "endIndex": 15,
+          "text": "la'",
+          "glossaryKey": "la'"
+        },
+        {
+          "startIndex": 16,
+          "endIndex": 24,
+          "text": "máquina'",
+          "glossaryKey": "máquina'"
+        },
+        {
+          "startIndex": 30,
+          "endIndex": 33,
+          "text": "pa'",
+          "glossaryKey": "pa'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Aquí todavía se da caña",
+      "translation": "Here they still give it (party) hard / rum flows",
+      "detailedTranslation": [
+        "se da caña — they give caña; dar caña = to party hard, go hard; caña = rum or intensity"
+      ],
+      "highlights": [
+        {
+          "startIndex": 19,
+          "endIndex": 23,
+          "text": "caña",
+          "glossaryKey": "caña"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Chequéate las babie', diablo, mami, qué dulce",
+      "translation": "Check out the babies / the crew, damn, mami, so sweet",
+      "detailedTranslation": [
+        "Chequéate — check yourself / check it out; chequear(se)",
+        "babie' — babies (English loan, shortened); slang for girls/crew",
+        "diablo — devil; here interjection like 'damn'",
+        "mami — mommy; term of endearment for a woman"
+      ],
+      "highlights": [
+        {
+          "startIndex": 14,
+          "endIndex": 20,
+          "text": "babie'",
+          "glossaryKey": "babie'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Hoy yo quiero beber, beber, beber",
+      "translation": "Today I want to drink, drink, drink",
+      "detailedTranslation": []
+    },
+    {
+      "type": "sentence",
+      "text": "Y hablar mierda hasta que me expulsen",
+      "translation": "And talk shit until they kick me out",
+      "detailedTranslation": [
+        "hablar mierda — to talk shit (vulgar)",
+        "expulsen — they kick (me) out; expulsar, subjunctive"
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "'Toy bien loco ('Toy bien loco), 'toy bien loco ('Toy bien loco)",
+      "translation": "I'm so crazy (I'm so crazy), I'm so crazy (I'm so crazy)",
+      "detailedTranslation": [
+        "'Toy — I'm (Estoy); shortened, very common in Caribbean/slang"
+      ],
+      "highlights": [
+        {
+          "startIndex": 0,
+          "endIndex": 4,
+          "text": "'Toy",
+          "glossaryKey": "Toy"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Cabrón, guía tú, que hasta caminando yo estoy que choco",
+      "translation": "Damn, you drive / lead, 'cause even walking I'm about to crash",
+      "detailedTranslation": [
+        "guía tú — you drive / you lead; guiar",
+        "estoy que choco — I'm about to crash; estar que + verb = on the verge of"
+      ],
+      "highlights": [
+        {
+          "startIndex": 0,
+          "endIndex": 6,
+          "text": "Cabrón",
+          "glossaryKey": "cabrón"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "'Toy bien loco ('Toy bien loco), 'toy bien loco ('Toy bien loco)",
+      "translation": "I'm so crazy (I'm so crazy), I'm so crazy (I'm so crazy)",
+      "detailedTranslation": [],
+      "highlights": [
+        {
+          "startIndex": 0,
+          "endIndex": 4,
+          "text": "'Toy",
+          "glossaryKey": "Toy"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Vamo' a disfrutar, que nunca se sabe si nos queda poco",
+      "translation": "Let's enjoy, 'cause you never know if we have little left",
+      "detailedTranslation": [
+        "Vamo' — let's (vamos); shortened"
+      ],
+      "highlights": [
+        {
+          "startIndex": 0,
+          "endIndex": 5,
+          "text": "Vamo'",
+          "glossaryKey": "vamo'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Debí tirar más f—",
+      "translation": "I should have taken more pho—",
+      "detailedTranslation": [
+        "Lyric cuts off (fotos); artistic effect"
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Gente, lo' quiero con cojone', los amo",
+      "translation": "Guys, I love you with (all my) guts, I love you",
+      "detailedTranslation": [
+        "lo' — them/you (los); shortened",
+        "cojone' — guts, balls (cojones); con cojones = with guts, for real"
+      ],
+      "highlights": [
+        {
+          "startIndex": 7,
+          "endIndex": 10,
+          "text": "lo'",
+          "glossaryKey": "lo'"
+        },
+        {
+          "startIndex": 22,
+          "endIndex": 29,
+          "text": "cojone'",
+          "glossaryKey": "cojone'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Gracias por estar aquí, de verdad",
+      "translation": "Thanks for being here, for real",
+      "detailedTranslation": []
+    },
+    {
+      "type": "sentence",
+      "text": "Para mí e' bien importante que estén aquí",
+      "translation": "For me it's really important that you're here",
+      "detailedTranslation": [
+        "e' — it's (es); shortened"
+      ],
+      "highlights": [
+        {
+          "startIndex": 8,
+          "endIndex": 10,
+          "text": "e'",
+          "glossaryKey": "e'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Cada uno de ustede' significa mucho para mí",
+      "translation": "Each one of you means a lot to me",
+      "detailedTranslation": [
+        "ustede' — you all (ustedes); shortened"
+      ],
+      "highlights": [
+        {
+          "startIndex": 12,
+          "endIndex": 19,
+          "text": "ustede'",
+          "glossaryKey": "ustede'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Así que, vamo' pa' la foto, vengan pa'cá",
+      "translation": "So, let's go for the photo, come over here",
+      "detailedTranslation": [
+        "vamo' pa' — let's go for (vamos para)",
+        "pa'cá — over here (para acá); shortened"
+      ],
+      "highlights": [
+        {
+          "startIndex": 9,
+          "endIndex": 14,
+          "text": "vamo'",
+          "glossaryKey": "vamo'"
+        },
+        {
+          "startIndex": 15,
+          "endIndex": 18,
+          "text": "pa'",
+          "glossaryKey": "pa'"
+        },
+        {
+          "startIndex": 35,
+          "endIndex": 40,
+          "text": "pa'cá",
+          "glossaryKey": "pa'cá"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Métase to'l mundo, to'l corillo, vamo'",
+      "translation": "Everybody get in, the whole crew, let's go",
+      "detailedTranslation": [
+        "to'l — todo el (all the); shortened",
+        "corillo — crew, group of friends (Puerto Rican slang)",
+        "Métase — get in (formal/plural); meterse"
+      ],
+      "highlights": [
+        {
+          "startIndex": 7,
+          "endIndex": 11,
+          "text": "to'l",
+          "glossaryKey": "to'l"
+        },
+        {
+          "startIndex": 24,
+          "endIndex": 31,
+          "text": "corillo",
+          "glossaryKey": "corillo"
+        },
+        {
+          "startIndex": 33,
+          "endIndex": 38,
+          "text": "vamo'",
+          "glossaryKey": "vamo'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Zumba",
+      "translation": "Zumba (dance/fitness or exclamation)",
+      "detailedTranslation": [
+        "Zumba — brand name for dance fitness; here could be exclamation or reference"
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Ya Bernie tiene el nene y Jan la nena",
+      "translation": "Now Bernie has the boy and Jan the girl",
+      "detailedTranslation": [
+        "nene / nena — baby boy / baby girl; kids"
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Ya no estamo' pa' la movie' y las cadena'",
+      "translation": "We're not here for the movies and the chains / TV",
+      "detailedTranslation": [
+        "estamo' — we are (estamos); shortened",
+        "movie' — movies (English loan); shortened",
+        "cadena' — chains (cadenas); can mean TV networks"
+      ],
+      "highlights": [
+        {
+          "startIndex": 6,
+          "endIndex": 13,
+          "text": "estamo'",
+          "glossaryKey": "estamo'"
+        },
+        {
+          "startIndex": 14,
+          "endIndex": 17,
+          "text": "pa'",
+          "glossaryKey": "pa'"
+        },
+        {
+          "startIndex": 21,
+          "endIndex": 27,
+          "text": "movie'",
+          "glossaryKey": "movie'"
+        },
+        {
+          "startIndex": 34,
+          "endIndex": 41,
+          "text": "cadena'",
+          "glossaryKey": "cadena'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "'Tamos pa' las cosa' que valgan la pena",
+      "translation": "We're here for the things that are worth it",
+      "detailedTranslation": [
+        "'Tamos — we're (Estamos); shortened",
+        "cosa' — things (cosas); shortened",
+        "valgan la pena — are worth it; valer la pena, subjunctive"
+      ],
+      "highlights": [
+        {
+          "startIndex": 0,
+          "endIndex": 6,
+          "text": "'Tamos",
+          "glossaryKey": "Tamos"
+        },
+        {
+          "startIndex": 7,
+          "endIndex": 10,
+          "text": "pa'",
+          "glossaryKey": "pa'"
+        },
+        {
+          "startIndex": 15,
+          "endIndex": 20,
+          "text": "cosa'",
+          "glossaryKey": "cosa'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Ey, pa'l perreo, la salsa, la bomba y la plena",
+      "translation": "Hey, for perreo, salsa, bomba and plena",
+      "detailedTranslation": [
+        "pa'l — for the (para el); shortened",
+        "perreo — reggaeton dance (doggy-style dance)",
+        "bomba — Puerto Rican music/dance genre",
+        "plena — Puerto Rican music genre"
+      ],
+      "highlights": [
+        {
+          "startIndex": 4,
+          "endIndex": 8,
+          "text": "pa'l",
+          "glossaryKey": "pa'l"
+        },
+        {
+          "startIndex": 9,
+          "endIndex": 15,
+          "text": "perreo",
+          "glossaryKey": "perreo"
+        },
+        {
+          "startIndex": 41,
+          "endIndex": 46,
+          "text": "plena",
+          "glossaryKey": "plena"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Chequéate la mía cómo es que suena",
+      "translation": "Check out mine how it sounds",
+      "detailedTranslation": [
+        "Chequéate — check it out",
+        "la mía — mine (the one that's mine)"
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Debí tirar más fotos de cuando te tuve",
+      "translation": "I should have taken more photos of when I had you",
+      "detailedTranslation": []
+    },
+    {
+      "type": "sentence",
+      "text": "Debí darte más besos y abrazo' las veces que pude",
+      "translation": "I should have given you more kisses and hugs the times I could",
+      "detailedTranslation": [],
+      "highlights": [
+        {
+          "startIndex": 23,
+          "endIndex": 30,
+          "text": "abrazo'",
+          "glossaryKey": "abrazo'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Ojalá que los mío' nunca se muden",
+      "translation": "I hope mine never move away",
+      "detailedTranslation": [],
+      "highlights": [
+        {
+          "startIndex": 14,
+          "endIndex": 18,
+          "text": "mío'",
+          "glossaryKey": "mío'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Y que tú me envíe' más nude'",
+      "translation": "And that you send me more nudes",
+      "detailedTranslation": [
+        "envíe' — you send (envíes); subjunctive, shortened",
+        "nude' — nudes (English loan); shortened"
+      ],
+      "highlights": [
+        {
+          "startIndex": 12,
+          "endIndex": 18,
+          "text": "envíe'",
+          "glossaryKey": "envíe'"
+        },
+        {
+          "startIndex": 23,
+          "endIndex": 28,
+          "text": "nude'",
+          "glossaryKey": "nude'"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Y si hoy me emborracho, que Beno me ayude",
+      "translation": "And if I get drunk today, may Beno help me",
+      "detailedTranslation": [
+        "Beno — friend's name (Beno or similar)"
       ]
     }
   ],
@@ -499,6 +1123,110 @@
     "PR": {
       "translation": "Puerto Rico",
       "explanation": "Abbreviation for Puerto Rico. Yo estoy en PR = I'm in Puerto Rico."
+    },
+    "beso'": {
+      "translation": "kisses (besos)",
+      "explanation": "Shortened for 'besos'. Same dropped-'s' pattern as foto', noche', etc."
+    },
+    "abrazo'": {
+      "translation": "hugs (abrazos)",
+      "explanation": "Shortened for 'abrazos'. Dar abrazos = to give hugs."
+    },
+    "vece'": {
+      "translation": "times (veces)",
+      "explanation": "Shortened for 'veces'. Las vece' que pude = the times I could."
+    },
+    "mío'": {
+      "translation": "mine, my people (míos)",
+      "explanation": "Shortened for 'míos'. Los mío' = my people, my family/friends."
+    },
+    "to'l": {
+      "translation": "all the (todo el)",
+      "explanation": "Shortened for 'todo el'. To'l día = all day, to'l mundo = everybody."
+    },
+    "máquina'": {
+      "translation": "machines (máquinas)",
+      "explanation": "Shortened for 'máquinas'. Prendan la' máquina' = start (up) the machines."
+    },
+    "caña": {
+      "translation": "rum; or intensity (dar caña)",
+      "explanation": "Literally sugarcane/rum. Dar caña = to go hard, party hard. Se da caña = it goes off."
+    },
+    "babie'": {
+      "translation": "babies (English loan)",
+      "explanation": "Shortened plural; slang for girls, crew, or 'the babies' (good-looking people)."
+    },
+    "Toy": {
+      "translation": "I'm (Estoy)",
+      "explanation": "Shortened for 'Estoy'. 'Toy bien loco = I'm so crazy. Very common in Caribbean/slang."
+    },
+    "vamo'": {
+      "translation": "let's (vamos)",
+      "explanation": "Shortened for 'vamos'. Vamo' a disfrutar = let's enjoy."
+    },
+    "lo'": {
+      "translation": "them, you all (los)",
+      "explanation": "Shortened for 'los'. Lo' quiero = I love you/them (with cojones = for real)."
+    },
+    "cojone'": {
+      "translation": "guts, balls (cojones)",
+      "explanation": "Shortened for 'cojones'. Con cojone' = with guts, for real. Los quiero con cojone' = I really love you."
+    },
+    "e'": {
+      "translation": "it's, is (es)",
+      "explanation": "Shortened for 'es'. Para mí e' importante = for me it's important."
+    },
+    "ustede'": {
+      "translation": "you all (ustedes)",
+      "explanation": "Shortened for 'ustedes'. Cada uno de ustede' = each one of you."
+    },
+    "pa'cá": {
+      "translation": "over here (para acá)",
+      "explanation": "Shortened for 'para acá'. Vengan pa'cá = come over here."
+    },
+    "corillo": {
+      "translation": "crew, group of friends",
+      "explanation": "Puerto Rican slang. To'l corillo = the whole crew. Group you hang with."
+    },
+    "estamo'": {
+      "translation": "we are (estamos)",
+      "explanation": "Shortened for 'estamos'. Ya no estamo' pa' = we're not (here) for."
+    },
+    "movie'": {
+      "translation": "movies (English loan)",
+      "explanation": "Shortened for 'movies'. No estamo' pa' la movie' = we're not here for the movies."
+    },
+    "cadena'": {
+      "translation": "chains (cadenas)",
+      "explanation": "Shortened for 'cadenas'. Can mean chains or TV networks (las cadenas)."
+    },
+    "Tamos": {
+      "translation": "we're (Estamos)",
+      "explanation": "Shortened for 'Estamos'. 'Tamos pa' las cosa' = we're here for the things."
+    },
+    "cosa'": {
+      "translation": "things (cosas)",
+      "explanation": "Shortened for 'cosas'. Las cosa' que valgan la pena = the things that are worth it."
+    },
+    "pa'l": {
+      "translation": "for the (para el)",
+      "explanation": "Shortened for 'para el'. Pa'l perreo = for the perreo."
+    },
+    "perreo": {
+      "translation": "perreo (reggaeton dance)",
+      "explanation": "Dance style to reggaeton; from perro (dog). Pa'l perreo = for dancing perreo."
+    },
+    "plena": {
+      "translation": "plena (music/dance)",
+      "explanation": "Puerto Rican music genre. La bomba y la plena = bomba and plena (traditional PR music)."
+    },
+    "envíe'": {
+      "translation": "you send (envíes)",
+      "explanation": "Shortened for 'envíes' (subjunctive of enviar). Que tú me envíe' = that you send me."
+    },
+    "nude'": {
+      "translation": "nudes (English loan)",
+      "explanation": "Shortened for 'nudes'. Envíe' más nude' = send (me) more nudes."
     }
   }
 }
