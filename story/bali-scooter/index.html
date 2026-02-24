@@ -1,220 +1,16 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Generate static index.html and story.html with all data embedded.
-After running, open index.html in the browser (file://) - no server needed.
-Usage: python3 generate_web.py
-"""
-import json
-from pathlib import Path
-
-ROOT = Path(__file__).resolve().parent
-STORIES_DIR = ROOT / "stories"
-STORY_OUTPUT_DIR = ROOT / "story"
-IMAGES_BASE = "../../images/"  # from story/<slug>/index.html to repo images/
-
-# Absolute base URL for og:image (must be set for social previews to work). No trailing slash.
-# Example: "https://youruser.github.io/your-repo" or your raw CDN base; images at <base>/images/<filename>
-SITE_BASE_URL = "https://boldijar.github.io/cuentito/"
-
-
-def slugify(sid: str) -> str:
-    """Convert story id to URL slug: bad_bunny_dtmf -> bad-bunny-dtmf."""
-    return sid.replace("_", "-").lower()
-
-
-def escape_embed(s: str) -> str:
-    """Escape for embedding in HTML <script>."""
-    return s.replace("</script>", "<\\/script>").replace("</SCRIPT>", "<\\/SCRIPT>")
-
-
-def load_stories():
-    stories = {}
-    for path in sorted(STORIES_DIR.glob("*.json")):
-        if path.name == "manifest.json":
-            continue
-        try:
-            data = json.loads(path.read_text(encoding="utf-8"))
-        except Exception as e:
-            print(f"Skip {path.name}: {e}")
-            continue
-        if not isinstance(data, dict):
-            continue
-        stories[path.stem] = data
-    return stories
-
-
-def build_manifest(stories):
-    out = []
-    for sid, data in stories.items():
-        thumb = ""
-        if data.get("thumbnail") and isinstance(data["thumbnail"], dict):
-            thumb = (data["thumbnail"].get("filename") or "").strip()
-        category = ""
-        if data.get("tags") and len(data["tags"]) > 0:
-            category = (data["tags"][0].get("name") or "").strip()
-        out.append({
-            "id": sid,
-            "slug": slugify(sid),
-            "title": (data.get("title") or "").strip(),
-            "titleTranslation": (data.get("titleTranslation") or "").strip(),
-            "level": (data.get("level") or "").strip(),
-            "thumbnail": thumb,
-            "category": category,
-        })
-    return out
-
-
-def write_index(manifest_js: str):
-    html = '''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Spanish Stories — Learn Spanish through short stories and songs</title>
-  <meta name="description" content="Learn Spanish through short stories and popular songs. Read or listen at your level (A1–C2). Tap a sentence to see the translation. Use the glossary for vocabulary and slang.">
-  <style>
-    * { box-sizing: border-box; }
-    body { font-family: system-ui, sans-serif; margin: 0; padding: 1.5rem; padding-top: 3rem; background: #f5f5f5; color: #1a1a1a; }
-    body.dark { background: #1a1a1a; color: #e0e0e0; }
-    .page-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
-    .page-header h1 { margin: 0; font-size: 1.5rem; }
-    .dark-toggle { position: fixed; top: 1rem; right: 1rem; width: 2.5rem; height: 2.5rem; padding: 0; border: none; border-radius: 50%; background: #e0e0e0; color: #333; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; }
-    .dark-toggle:hover { background: #ccc; }
-    body.dark .dark-toggle { background: #333; color: #e0e0e0; }
-    body.dark .dark-toggle:hover { background: #555; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
-    .card { display: block; text-decoration: none; color: inherit; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s; }
-    body.dark .card { background: #2d2d2d; }
-    .card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    body.dark .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
-    .card-bg { position: relative; height: 140px; background-size: cover; background-position: center; background-color: #fff; }
-    body.dark .card-bg { background-color: #1a1a1a; }
-    .card-bg .level { position: absolute; top: 0.5rem; right: 0.5rem; background: rgba(0,0,0,0.7); color: #fff; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
-    body.dark .card-bg .level { background: rgba(255,255,255,0.25); color: #1a1a1a; }
-    .card-body { padding: 1rem; }
-    .card-title { margin: 0; font-size: 1.05rem; line-height: 1.35; }
-    .card-meta { margin-top: 0.25rem; font-size: 0.85rem; color: #666; }
-    body.dark .card-meta { color: #aaa; }
-    .error { color: #c00; padding: 1rem; }
-    .hero { margin-bottom: 2rem; max-width: 1200px; margin-left: auto; margin-right: auto; }
-    .hero h1 { margin: 0; font-size: 2.25rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; }
-    .hero p { margin: 0.75rem 0 0; font-size: 1.1rem; color: #555; line-height: 1.5; max-width: 42rem; }
-    body.dark .hero p { color: #aaa; }
-  </style>
-</head>
-<body>
-  <button type="button" class="dark-toggle" id="darkToggle" title="Toggle dark mode" aria-label="Toggle dark mode">
-    <svg id="iconSun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-    <svg id="iconMoon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-  </button>
-  <div class="hero">
-    <h1>Learn Spanish through short stories and popular songs</h1>
-    <p>Read or listen at your level (A1–C2). Tap a sentence to see the translation. Use the glossary for vocabulary and slang.</p>
-  </div>
-  <div id="app"></div>
-  <script>var EMBEDDED_MANIFEST = ''' + manifest_js + ''';</script>
-  <script>
-    (function () {
-      var app = document.getElementById('app');
-      var darkToggle = document.getElementById('darkToggle');
-      var iconSun = document.getElementById('iconSun');
-      var iconMoon = document.getElementById('iconMoon');
-      try {
-        if (localStorage.getItem('darkMode') === '1') {
-          document.body.classList.add('dark');
-          iconSun.style.display = 'none';
-          iconMoon.style.display = 'block';
-        } else { iconMoon.style.display = 'none'; }
-      } catch (e) {}
-      darkToggle.addEventListener('click', function () {
-        document.body.classList.toggle('dark');
-        var isDark = document.body.classList.contains('dark');
-        iconSun.style.display = isDark ? 'none' : 'block';
-        iconMoon.style.display = isDark ? 'block' : 'none';
-        try { localStorage.setItem('darkMode', isDark ? '1' : '0'); } catch (e) {}
-      });
-      function escapeHtml(s) {
-        if (s == null) return '';
-        var div = document.createElement('div');
-        div.textContent = s;
-        return div.innerHTML;
-      }
-      var list = EMBEDDED_MANIFEST;
-      if (!list || !list.length) {
-        app.innerHTML = '<p class="error">No stories found.</p>';
-        return;
-      }
-      var html = '<div class="grid">';
-      list.forEach(function (item) {
-        var id = item.id || '';
-        var slug = item.slug || id;
-        var title = item.title || id;
-        var titleTranslation = item.titleTranslation || '';
-        var level = item.level || '';
-        var thumb = (item.thumbnail && item.thumbnail.trim()) ? ('images/' + item.thumbnail.trim()) : '';
-        var bgStyle = thumb ? (' style="background-image: url(\\'' + thumb + '\\')"') : '';
-        html += '<a class="card" href="story/' + encodeURIComponent(slug) + '/">';
-        html += '<div class="card-bg"' + bgStyle + '><span class="level">' + escapeHtml(level) + '</span></div>';
-        html += '<div class="card-body"><h2 class="card-title">' + escapeHtml(title) + '</h2>';
-        if (titleTranslation) html += '<p class="card-meta">' + escapeHtml(titleTranslation) + '</p>';
-        html += '</div></a>';
-      });
-      app.innerHTML = html + '</div>';
-    })();
-  </script>
-</body>
-</html>
-'''
-    (ROOT / "index.html").write_text(html, encoding="utf-8")
-
-
-def story_page_html(story: dict, slug: str) -> str:
-    """Build one story's static HTML with SEO in head. Uses IMAGES_BASE for assets."""
-    title = (story.get("title") or "").strip()
-    level = (story.get("level") or "").strip()
-    thumb = story.get("thumbnail") or {}
-    thumb_filename = (thumb.get("filename") or "").strip() if isinstance(thumb, dict) else ""
-    meta_desc = f"Learn Spanish with this {level} story: {title}. Read the text, tap sentences for translation, and use the glossary for vocabulary."
-    if thumb_filename and SITE_BASE_URL:
-        og_image = f"{SITE_BASE_URL.rstrip('/')}/images/{thumb_filename}"
-    else:
-        og_image = (IMAGES_BASE + thumb_filename) if thumb_filename else ""
-
-    html = _STORY_PAGE_TEMPLATE
-    repl = {
-        "__PAGE_TITLE__": escape_html_attr(title + " — Spanish Stories"),
-        "__META_DESCRIPTION__": escape_html_attr(meta_desc),
-        "__OG_TITLE__": escape_html_attr(title + " — Spanish Stories"),
-        "__OG_DESCRIPTION__": escape_html_attr(meta_desc),
-        "__OG_IMAGE__": escape_html_attr(og_image),
-        "__BACK_HREF__": "../../index.html",
-        "__IMAGES_BASE__": IMAGES_BASE,
-        "__EMBEDDED_STORY_JSON__": escape_embed(json.dumps(story, ensure_ascii=False)),
-    }
-    for k, v in repl.items():
-        html = html.replace(k, v)
-    return html
-
-
-def escape_html_attr(s: str) -> str:
-    """Escape for HTML attribute value."""
-    return s.replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;").replace(">", "&gt;")
-
-
-_STORY_PAGE_TEMPLATE = '''<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>__PAGE_TITLE__</title>
-  <meta name="description" content="__META_DESCRIPTION__">
+  <title>El surfista y la scooter en Bali — Spanish Stories</title>
+  <meta name="description" content="Learn Spanish with this B1 story: El surfista y la scooter en Bali. Read the text, tap sentences for translation, and use the glossary for vocabulary.">
   <meta property="og:type" content="article">
   <meta property="og:image:width" content="500">
   <meta property="og:image:height" content="500">
-  <meta property="og:title" content="__OG_TITLE__">
-  <meta property="og:description" content="__OG_DESCRIPTION__">
-  <meta property="og:image" content="__OG_IMAGE__">
+  <meta property="og:title" content="El surfista y la scooter en Bali — Spanish Stories">
+  <meta property="og:description" content="Learn Spanish with this B1 story: El surfista y la scooter en Bali. Read the text, tap sentences for translation, and use the glossary for vocabulary.">
+  <meta property="og:image" content="https://boldijar.github.io/cuentito/images/bali_scooter_thumbnail_surfer_beach.png">
   <style>
     * { box-sizing: border-box; }
     body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 0 auto; padding: 1rem 1.5rem; padding-top: 3rem; line-height: 1.6; color: #1a1a1a; }
@@ -276,7 +72,7 @@ _STORY_PAGE_TEMPLATE = '''<!DOCTYPE html>
     <svg id="iconSun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
     <svg id="iconMoon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
   </button>
-  <div class="back-header"><a href="__BACK_HREF__"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</a></div>
+  <div class="back-header"><a href="../../index.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</a></div>
   <header>
     <div><h1 id="title"></h1><p class="meta" id="meta"></p><div class="tags" id="tags"></div></div>
     <div class="switch-row">
@@ -288,7 +84,7 @@ _STORY_PAGE_TEMPLATE = '''<!DOCTYPE html>
   </header>
   <main class="content" id="content"></main>
   <footer class="glossary" id="glossary"></footer>
-  <script>var EMBEDDED_STORY = __EMBEDDED_STORY_JSON__; var IMAGES_BASE = "__IMAGES_BASE__";</script>
+  <script>var EMBEDDED_STORY = {"title": "El surfista y la scooter en Bali", "titleTranslation": "The surfer and the scooter in Bali", "level": "B1", "language": "es", "thumbnail": {"filename": "bali_scooter_thumbnail_surfer_beach.png", "generation_prompt": "A surfer with a board walking on a tropical beach at sunset, Bali style, warm colors, peaceful mood."}, "tags": [{"name": "Grammar", "description": "Past tense (pretérito indefinido and imperfecto), expressing surprise and discovery"}, {"name": "Vocabulary", "description": "Travel, transport, directions, daily routines"}, {"name": "Themes", "description": "Travel mishaps, cultural differences, driving rules"}], "content": [{"type": "sentence", "text": "Hace un año fui a Bali para surfear.", "translation": "A year ago I went to Bali to surf.", "detailedTranslation": ["Hace (from hacer) — ago; hace + time = ago", "un año — a year", "fui — I went; infinitive ir, 1st person singular pretérito (fui/fuiste/fue)", "a — to", "Bali — Bali", "para — in order to", "surfear — to surf (infinitive)"]}, {"type": "sentence", "text": "Necesitaba un medio de transporte para moverme por la isla.", "translation": "I needed a means of transport to get around the island.", "detailedTranslation": ["Necesitaba — I needed; infinitive necesitar, imperfect", "medio de transporte — means of transport", "para — in order to", "moverme — to get around (reflexive); infinitive moverse"], "highlights": [{"startIndex": 14, "endIndex": 33, "text": "medio de transporte", "glossaryKey": "medio de transporte"}]}, {"type": "image", "filename": "bali_scooter_rental_shop.png", "generation_prompt": "Small rental shop in Bali with scooters parked in front, tropical plants, sign in Spanish and English, sunny day."}, {"type": "sentence", "text": "Alquilé una scooter cerca de la playa.", "translation": "I rented a scooter near the beach.", "detailedTranslation": ["Alquilé — I rented; infinitive alquilar, 1st person pretérito", "cerca de — near", "la playa — the beach"], "highlights": [{"startIndex": 0, "endIndex": 7, "text": "Alquilé", "glossaryKey": "alquilar"}]}, {"type": "sentence", "text": "El dueño me dio las llaves y un casco, pero no me explicó nada sobre el tráfico.", "translation": "The owner gave me the keys and a helmet, but he didn't explain anything about the traffic.", "detailedTranslation": []}, {"type": "sentence", "text": "Salí a la carretera y empecé a conducir por la derecha, como en mi país.", "translation": "I went out onto the road and started driving on the right, like in my country.", "detailedTranslation": ["Salí — I went out; infinitive salir, pretérito", "empecé — I started; infinitive empezar, pretérito", "conducir — to drive (infinitive)", "por la derecha — on the right"], "highlights": [{"startIndex": 44, "endIndex": 54, "text": "la derecha", "glossaryKey": "derecha"}]}, {"type": "sentence", "text": "Nadie me dijo que en Indonesia se conduce por la izquierda.", "translation": "Nobody told me that in Indonesia you drive on the left.", "detailedTranslation": []}, {"type": "sentence", "text": "Los primeros días todo parecía normal.", "translation": "The first few days everything seemed normal.", "detailedTranslation": []}, {"type": "image", "filename": "bali_scooter_street_traffic.png", "generation_prompt": "Busy street in Bali with scooters and cars, tropical setting, local drivers, slight chaos but colorful and lively."}, {"type": "sentence", "text": "Iba al surf por la mañana y volvía por la tarde.", "translation": "I used to go surfing in the morning and come back in the afternoon.", "detailedTranslation": ["Iba — I used to go; infinitive ir, imperfect", "volvía — I used to come back; infinitive volver, imperfect"]}, {"type": "sentence", "text": "A veces me sentía un poco raro cuando los coches me adelantaban.", "translation": "Sometimes I felt a bit strange when cars overtook me.", "detailedTranslation": ["sentía — I felt; infinitive sentir, imperfect", "adelantaban — they overtook; infinitive adelantar, imperfect"], "highlights": [{"startIndex": 52, "endIndex": 63, "text": "adelantaban", "glossaryKey": "adelantar"}]}, {"type": "sentence", "text": "Pensaba que los conductores en Bali eran muy atrevidos.", "translation": "I thought the drivers in Bali were very bold.", "detailedTranslation": []}, {"type": "sentence", "text": "Un día un turista me gritó desde su coche: \"¡Estás en el lado equivocado!\"", "translation": "One day a tourist shouted at me from his car: \"You're on the wrong side!\"", "detailedTranslation": ["gritó — he shouted; infinitive gritar, 3rd person pretérito"]}, {"type": "sentence", "text": "No entendí bien y seguí mi camino.", "translation": "I didn't understand well and continued on my way.", "detailedTranslation": ["entendí — I understood; infinitive entender, pretérito", "seguí — I continued; infinitive seguir, pretérito (e→i)"]}, {"type": "sentence", "text": "Al tercer día, otra persona me hizo señas para que me cambiara de carril.", "translation": "On the third day, another person waved at me to change lanes.", "detailedTranslation": ["hizo señas — waved; hacer señas = to gesture"], "highlights": [{"startIndex": 36, "endIndex": 41, "text": "señas", "glossaryKey": "señas"}]}, {"type": "sentence", "text": "Entonces lo busqué en internet y descubrí la verdad.", "translation": "Then I looked it up on the internet and discovered the truth.", "detailedTranslation": ["busqué — I looked up; infinitive buscar, pretérito (c→qu)", "descubrí — I discovered; infinitive descubrir, pretérito"], "highlights": [{"startIndex": 33, "endIndex": 41, "text": "descubrí", "glossaryKey": "descubrir"}]}, {"type": "image", "filename": "bali_scooter_surfer_realization.png", "generation_prompt": "Surfer sitting on a scooter at the side of a road, looking at phone with surprised expression, palm trees, Bali, comic relief mood."}, {"type": "sentence", "text": "En Indonesia se conduce por la izquierda, igual que en Reino Unido o Japón.", "translation": "In Indonesia you drive on the left, just like in the UK or Japan.", "detailedTranslation": []}, {"type": "sentence", "text": "Yo había estado conduciendo por el lado equivocado durante tres días.", "translation": "I had been driving on the wrong side for three days.", "detailedTranslation": ["había estado conduciendo — had been driving; past perfect continuous"]}, {"type": "sentence", "text": "Menos mal que no pasó nada grave.", "translation": "Thank goodness nothing serious happened.", "detailedTranslation": ["Menos mal — thank goodness (lit. less bad)"]}, {"type": "sentence", "text": "Desde entonces siempre pregunto por las normas de circulación cuando viajo.", "translation": "Since then I always ask about the traffic rules when I travel.", "detailedTranslation": ["pregunto — I ask; infinitive preguntar, present", "viajo — I travel; infinitive viajar, present"]}], "glossary": {"medio de transporte": {"translation": "means of transport", "explanation": "Phrase: 'medio' is masculine; use 'un' (a) or 'el' (the). Plural: medios de transporte."}, "alquilar": {"translation": "to rent", "explanation": "Regular -ar verb. Past: alquilé (I rented). Same as 'rentar' in some regions."}, "derecha": {"translation": "right (side)", "explanation": "Noun (la derecha). 'Por la derecha' = on the right. Opposite: la izquierda (left)."}, "izquierda": {"translation": "left (side)", "explanation": "Noun (la izquierda). 'Por la izquierda' = on the left. In Indonesia they drive on the left."}, "adelantar": {"translation": "to overtake, pass", "explanation": "Regular -ar verb. 'Me adelantaban' = they were overtaking me (imperfect, repeated action)."}, "señas": {"translation": "signs, gestures", "explanation": "Plural of 'seña'. 'Hacer señas' = to wave or gesture (at someone)."}, "descubrir": {"translation": "to discover, find out", "explanation": "Regular -ir verb. Past: descubrí. Similar to 'enterarse' (to find out)."}}}; var IMAGES_BASE = "../../images/";</script>
   <script>
     (function () {
       function escapeHtml(s) {
@@ -440,31 +236,3 @@ _STORY_PAGE_TEMPLATE = '''<!DOCTYPE html>
   </script>
 </body>
 </html>
-'''
-
-
-def write_story_pages(stories: dict) -> None:
-    """Write one index.html per story under story/<slug>/ with full SEO in head."""
-    for sid, data in stories.items():
-        slug = slugify(sid)
-        out_dir = STORY_OUTPUT_DIR / slug
-        out_dir.mkdir(parents=True, exist_ok=True)
-        html = story_page_html(data, slug)
-        (out_dir / "index.html").write_text(html, encoding="utf-8")
-
-
-def main():
-    stories = load_stories()
-    if not stories:
-        print("No story JSONs found in stories/")
-        return
-    manifest = build_manifest(stories)
-    manifest_js = escape_embed(json.dumps(manifest, ensure_ascii=False))
-    write_index(manifest_js)
-    write_story_pages(stories)
-    print("Generated index.html and story/<slug>/index.html for", len(stories), "stories.")
-    print("Open index.html in your browser (file://) — no server needed.")
-
-
-if __name__ == "__main__":
-    main()

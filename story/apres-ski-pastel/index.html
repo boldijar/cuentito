@@ -1,220 +1,16 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Generate static index.html and story.html with all data embedded.
-After running, open index.html in the browser (file://) - no server needed.
-Usage: python3 generate_web.py
-"""
-import json
-from pathlib import Path
-
-ROOT = Path(__file__).resolve().parent
-STORIES_DIR = ROOT / "stories"
-STORY_OUTPUT_DIR = ROOT / "story"
-IMAGES_BASE = "../../images/"  # from story/<slug>/index.html to repo images/
-
-# Absolute base URL for og:image (must be set for social previews to work). No trailing slash.
-# Example: "https://youruser.github.io/your-repo" or your raw CDN base; images at <base>/images/<filename>
-SITE_BASE_URL = "https://boldijar.github.io/cuentito/"
-
-
-def slugify(sid: str) -> str:
-    """Convert story id to URL slug: bad_bunny_dtmf -> bad-bunny-dtmf."""
-    return sid.replace("_", "-").lower()
-
-
-def escape_embed(s: str) -> str:
-    """Escape for embedding in HTML <script>."""
-    return s.replace("</script>", "<\\/script>").replace("</SCRIPT>", "<\\/SCRIPT>")
-
-
-def load_stories():
-    stories = {}
-    for path in sorted(STORIES_DIR.glob("*.json")):
-        if path.name == "manifest.json":
-            continue
-        try:
-            data = json.loads(path.read_text(encoding="utf-8"))
-        except Exception as e:
-            print(f"Skip {path.name}: {e}")
-            continue
-        if not isinstance(data, dict):
-            continue
-        stories[path.stem] = data
-    return stories
-
-
-def build_manifest(stories):
-    out = []
-    for sid, data in stories.items():
-        thumb = ""
-        if data.get("thumbnail") and isinstance(data["thumbnail"], dict):
-            thumb = (data["thumbnail"].get("filename") or "").strip()
-        category = ""
-        if data.get("tags") and len(data["tags"]) > 0:
-            category = (data["tags"][0].get("name") or "").strip()
-        out.append({
-            "id": sid,
-            "slug": slugify(sid),
-            "title": (data.get("title") or "").strip(),
-            "titleTranslation": (data.get("titleTranslation") or "").strip(),
-            "level": (data.get("level") or "").strip(),
-            "thumbnail": thumb,
-            "category": category,
-        })
-    return out
-
-
-def write_index(manifest_js: str):
-    html = '''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Spanish Stories — Learn Spanish through short stories and songs</title>
-  <meta name="description" content="Learn Spanish through short stories and popular songs. Read or listen at your level (A1–C2). Tap a sentence to see the translation. Use the glossary for vocabulary and slang.">
-  <style>
-    * { box-sizing: border-box; }
-    body { font-family: system-ui, sans-serif; margin: 0; padding: 1.5rem; padding-top: 3rem; background: #f5f5f5; color: #1a1a1a; }
-    body.dark { background: #1a1a1a; color: #e0e0e0; }
-    .page-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
-    .page-header h1 { margin: 0; font-size: 1.5rem; }
-    .dark-toggle { position: fixed; top: 1rem; right: 1rem; width: 2.5rem; height: 2.5rem; padding: 0; border: none; border-radius: 50%; background: #e0e0e0; color: #333; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; }
-    .dark-toggle:hover { background: #ccc; }
-    body.dark .dark-toggle { background: #333; color: #e0e0e0; }
-    body.dark .dark-toggle:hover { background: #555; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
-    .card { display: block; text-decoration: none; color: inherit; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s; }
-    body.dark .card { background: #2d2d2d; }
-    .card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    body.dark .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
-    .card-bg { position: relative; height: 140px; background-size: cover; background-position: center; background-color: #fff; }
-    body.dark .card-bg { background-color: #1a1a1a; }
-    .card-bg .level { position: absolute; top: 0.5rem; right: 0.5rem; background: rgba(0,0,0,0.7); color: #fff; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
-    body.dark .card-bg .level { background: rgba(255,255,255,0.25); color: #1a1a1a; }
-    .card-body { padding: 1rem; }
-    .card-title { margin: 0; font-size: 1.05rem; line-height: 1.35; }
-    .card-meta { margin-top: 0.25rem; font-size: 0.85rem; color: #666; }
-    body.dark .card-meta { color: #aaa; }
-    .error { color: #c00; padding: 1rem; }
-    .hero { margin-bottom: 2rem; max-width: 1200px; margin-left: auto; margin-right: auto; }
-    .hero h1 { margin: 0; font-size: 2.25rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; }
-    .hero p { margin: 0.75rem 0 0; font-size: 1.1rem; color: #555; line-height: 1.5; max-width: 42rem; }
-    body.dark .hero p { color: #aaa; }
-  </style>
-</head>
-<body>
-  <button type="button" class="dark-toggle" id="darkToggle" title="Toggle dark mode" aria-label="Toggle dark mode">
-    <svg id="iconSun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-    <svg id="iconMoon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-  </button>
-  <div class="hero">
-    <h1>Learn Spanish through short stories and popular songs</h1>
-    <p>Read or listen at your level (A1–C2). Tap a sentence to see the translation. Use the glossary for vocabulary and slang.</p>
-  </div>
-  <div id="app"></div>
-  <script>var EMBEDDED_MANIFEST = ''' + manifest_js + ''';</script>
-  <script>
-    (function () {
-      var app = document.getElementById('app');
-      var darkToggle = document.getElementById('darkToggle');
-      var iconSun = document.getElementById('iconSun');
-      var iconMoon = document.getElementById('iconMoon');
-      try {
-        if (localStorage.getItem('darkMode') === '1') {
-          document.body.classList.add('dark');
-          iconSun.style.display = 'none';
-          iconMoon.style.display = 'block';
-        } else { iconMoon.style.display = 'none'; }
-      } catch (e) {}
-      darkToggle.addEventListener('click', function () {
-        document.body.classList.toggle('dark');
-        var isDark = document.body.classList.contains('dark');
-        iconSun.style.display = isDark ? 'none' : 'block';
-        iconMoon.style.display = isDark ? 'block' : 'none';
-        try { localStorage.setItem('darkMode', isDark ? '1' : '0'); } catch (e) {}
-      });
-      function escapeHtml(s) {
-        if (s == null) return '';
-        var div = document.createElement('div');
-        div.textContent = s;
-        return div.innerHTML;
-      }
-      var list = EMBEDDED_MANIFEST;
-      if (!list || !list.length) {
-        app.innerHTML = '<p class="error">No stories found.</p>';
-        return;
-      }
-      var html = '<div class="grid">';
-      list.forEach(function (item) {
-        var id = item.id || '';
-        var slug = item.slug || id;
-        var title = item.title || id;
-        var titleTranslation = item.titleTranslation || '';
-        var level = item.level || '';
-        var thumb = (item.thumbnail && item.thumbnail.trim()) ? ('images/' + item.thumbnail.trim()) : '';
-        var bgStyle = thumb ? (' style="background-image: url(\\'' + thumb + '\\')"') : '';
-        html += '<a class="card" href="story/' + encodeURIComponent(slug) + '/">';
-        html += '<div class="card-bg"' + bgStyle + '><span class="level">' + escapeHtml(level) + '</span></div>';
-        html += '<div class="card-body"><h2 class="card-title">' + escapeHtml(title) + '</h2>';
-        if (titleTranslation) html += '<p class="card-meta">' + escapeHtml(titleTranslation) + '</p>';
-        html += '</div></a>';
-      });
-      app.innerHTML = html + '</div>';
-    })();
-  </script>
-</body>
-</html>
-'''
-    (ROOT / "index.html").write_text(html, encoding="utf-8")
-
-
-def story_page_html(story: dict, slug: str) -> str:
-    """Build one story's static HTML with SEO in head. Uses IMAGES_BASE for assets."""
-    title = (story.get("title") or "").strip()
-    level = (story.get("level") or "").strip()
-    thumb = story.get("thumbnail") or {}
-    thumb_filename = (thumb.get("filename") or "").strip() if isinstance(thumb, dict) else ""
-    meta_desc = f"Learn Spanish with this {level} story: {title}. Read the text, tap sentences for translation, and use the glossary for vocabulary."
-    if thumb_filename and SITE_BASE_URL:
-        og_image = f"{SITE_BASE_URL.rstrip('/')}/images/{thumb_filename}"
-    else:
-        og_image = (IMAGES_BASE + thumb_filename) if thumb_filename else ""
-
-    html = _STORY_PAGE_TEMPLATE
-    repl = {
-        "__PAGE_TITLE__": escape_html_attr(title + " — Spanish Stories"),
-        "__META_DESCRIPTION__": escape_html_attr(meta_desc),
-        "__OG_TITLE__": escape_html_attr(title + " — Spanish Stories"),
-        "__OG_DESCRIPTION__": escape_html_attr(meta_desc),
-        "__OG_IMAGE__": escape_html_attr(og_image),
-        "__BACK_HREF__": "../../index.html",
-        "__IMAGES_BASE__": IMAGES_BASE,
-        "__EMBEDDED_STORY_JSON__": escape_embed(json.dumps(story, ensure_ascii=False)),
-    }
-    for k, v in repl.items():
-        html = html.replace(k, v)
-    return html
-
-
-def escape_html_attr(s: str) -> str:
-    """Escape for HTML attribute value."""
-    return s.replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;").replace(">", "&gt;")
-
-
-_STORY_PAGE_TEMPLATE = '''<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>__PAGE_TITLE__</title>
-  <meta name="description" content="__META_DESCRIPTION__">
+  <title>El après-ski y el pastelito — Spanish Stories</title>
+  <meta name="description" content="Learn Spanish with this A2 story: El après-ski y el pastelito. Read the text, tap sentences for translation, and use the glossary for vocabulary.">
   <meta property="og:type" content="article">
   <meta property="og:image:width" content="500">
   <meta property="og:image:height" content="500">
-  <meta property="og:title" content="__OG_TITLE__">
-  <meta property="og:description" content="__OG_DESCRIPTION__">
-  <meta property="og:image" content="__OG_IMAGE__">
+  <meta property="og:title" content="El après-ski y el pastelito — Spanish Stories">
+  <meta property="og:description" content="Learn Spanish with this A2 story: El après-ski y el pastelito. Read the text, tap sentences for translation, and use the glossary for vocabulary.">
+  <meta property="og:image" content="https://boldijar.github.io/cuentito/images/apres_ski_pastel_thumbnail_snow_mountains.png">
   <style>
     * { box-sizing: border-box; }
     body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 0 auto; padding: 1rem 1.5rem; padding-top: 3rem; line-height: 1.6; color: #1a1a1a; }
@@ -276,7 +72,7 @@ _STORY_PAGE_TEMPLATE = '''<!DOCTYPE html>
     <svg id="iconSun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
     <svg id="iconMoon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
   </button>
-  <div class="back-header"><a href="__BACK_HREF__"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</a></div>
+  <div class="back-header"><a href="../../index.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</a></div>
   <header>
     <div><h1 id="title"></h1><p class="meta" id="meta"></p><div class="tags" id="tags"></div></div>
     <div class="switch-row">
@@ -288,7 +84,7 @@ _STORY_PAGE_TEMPLATE = '''<!DOCTYPE html>
   </header>
   <main class="content" id="content"></main>
   <footer class="glossary" id="glossary"></footer>
-  <script>var EMBEDDED_STORY = __EMBEDDED_STORY_JSON__; var IMAGES_BASE = "__IMAGES_BASE__";</script>
+  <script>var EMBEDDED_STORY = {"title": "El après-ski y el pastelito", "titleTranslation": "The après-ski and the little pastry", "level": "A2", "language": "es", "thumbnail": {"filename": "apres_ski_pastel_thumbnail_snow_mountains.png", "generation_prompt": "Snowy mountains in Romania, snowboarder in the distance, winter sun, peaceful ski resort."}, "tags": [{"name": "Grammar", "description": "Past tense (pretérito indefinido, imperfecto), simple connectors, expressing likes and decisions"}, {"name": "Vocabulary", "description": "Snow, mountains, directions, food, places"}, {"name": "Themes", "description": "Snowboarding, après-ski, finding your way, making memories"}], "content": [{"type": "sentence", "text": "Una vez fui a hacer snowboard a las montañas de Rumanía.", "translation": "Once I went snowboarding in the mountains of Romania.", "detailedTranslation": ["Una vez — once", "fui — I went; infinitive ir, 1st person pretérito", "a hacer — to do (infinitive hacer); ir a + infinitive = to go (do something)", "snowboard — snowboarding (loan word)"]}, {"type": "sentence", "text": "Sabía que hay un après-ski en medio de la pista con pastelitos.", "translation": "I knew there is an après-ski in the middle of the slope with little pastries.", "detailedTranslation": ["Sabía — I knew; infinitive saber, imperfect", "hay — there is/are; from haber"], "highlights": [{"startIndex": 17, "endIndex": 26, "text": "après-ski", "glossaryKey": "après-ski"}, {"startIndex": 52, "endIndex": 62, "text": "pastelitos", "glossaryKey": "pastelitos"}]}, {"type": "sentence", "text": "No sabíamos cómo llegar pero al final alguien nos dijo el camino.", "translation": "We didn't know how to get there but in the end someone told us the way.", "detailedTranslation": ["sabíamos — we knew; infinitive saber, imperfect", "llegar — to get there (infinitive)", "dijo — told; infinitive decir, 3rd person pretérito (e→i)"]}, {"type": "image", "filename": "apres_ski_pastel_mountains_slope.png", "generation_prompt": "Snowboarder looking at a mountain slope in Romanian mountains, winter, looking for the way, snow and trees."}, {"type": "sentence", "text": "Encontramos el lugar y bajamos por esa pista.", "translation": "We found the place and went down that slope.", "detailedTranslation": ["Encontramos — we found; infinitive encontrar", "bajamos — we went down; infinitive bajar"]}, {"type": "sentence", "text": "En una parte la pista era muy empinada y corta.", "translation": "In one part the slope was very steep and short.", "detailedTranslation": ["era — was; infinitive ser, imperfect"], "highlights": [{"startIndex": 30, "endIndex": 38, "text": "empinada", "glossaryKey": "empinada"}]}, {"type": "sentence", "text": "Después a la derecha la pista iba más lento y no daba miedo.", "translation": "Then to the right the slope went slower and it wasn't scary.", "detailedTranslation": ["iba — went; infinitive ir, imperfect (slope 'went')", "daba miedo — was scary; dar miedo = to be scary"], "highlights": [{"startIndex": 49, "endIndex": 59, "text": "daba miedo", "glossaryKey": "daba miedo"}]}, {"type": "image", "filename": "apres_ski_pastel_steep_section.png", "generation_prompt": "Steep short section of a ski slope then easing to the right, snow, winter, dynamic but not scary."}, {"type": "sentence", "text": "¡Era genial!", "translation": "It was great!", "detailedTranslation": ["Era — was; infinitive ser, imperfect", "genial — great"]}, {"type": "sentence", "text": "Llegamos al après-ski pero ya no tenían pastelitos.", "translation": "We arrived at the après-ski but they didn't have little pastries anymore.", "detailedTranslation": ["Llegamos — we arrived; infinitive llegar", "tenían — they had; infinitive tener, imperfect"]}, {"type": "sentence", "text": "Decidimos que ese trozo de pista era nuestro pastelito.", "translation": "We decided that that bit of slope was our little pastry.", "detailedTranslation": ["Decidimos — we decided; infinitive decidir", "era — was; ser, imperfect"], "highlights": [{"startIndex": 18, "endIndex": 23, "text": "trozo", "glossaryKey": "trozo"}, {"startIndex": 45, "endIndex": 54, "text": "pastelito", "glossaryKey": "pastelito"}]}, {"type": "image", "filename": "apres_ski_pastel_bar_arrival.png", "generation_prompt": "Arriving at a cozy après-ski bar in the mountains, no pastries left, friends laughing, winter atmosphere."}, {"type": "sentence", "text": "Desde entonces \"ir a por un pastelito\" significa bajar por esa pista.", "translation": "Since then \"going for a little pastry\" means going down that slope.", "detailedTranslation": ["Desde entonces — since then", "significa — means; infinitive significar"], "highlights": [{"startIndex": 39, "endIndex": 48, "text": "significa", "glossaryKey": "significa"}]}, {"type": "sentence", "text": "Ese recorrido es nuestro pastelito favorito.", "translation": "That run is our favourite little pastry.", "detailedTranslation": ["recorrido — run, route", "es — is; infinitive ser"]}, {"type": "sentence", "text": "La montaña nos dio algo mejor que un dulce.", "translation": "The mountain gave us something better than a sweet.", "detailedTranslation": ["dio — gave; infinitive dar, 3rd person pretérito"], "highlights": [{"startIndex": 37, "endIndex": 42, "text": "dulce", "glossaryKey": "dulce"}]}], "glossary": {"après-ski": {"translation": "après-ski (after-ski)", "explanation": "Loan word: the bar or place where you go after skiing. Same in English."}, "pastelitos": {"translation": "little pastries, small cakes", "explanation": "Plural of 'pastelito'. Diminutive of pastel; common word for small sweet baked goods."}, "empinada": {"translation": "steep", "explanation": "Adjective (feminine). 'Una pista empinada' = a steep slope. Masculine: empinado."}, "daba miedo": {"translation": "was scary, gave (us) fear", "explanation": "Dar miedo = to be scary. 'No daba miedo' = it wasn't scary. Literally 'it didn't give fear'."}, "trozo": {"translation": "piece, bit", "explanation": "Noun (masculine). Un trozo de = a piece of. Un trozo de pista = a section of slope."}, "pastelito": {"translation": "little pastry, small cake", "explanation": "Noun (masculine). Diminutive of pastel (-ito). Here used in a fun way: the 'little pastry' is the nice run."}, "significa": {"translation": "means", "explanation": "From the verb significar (to mean). 'X significa Y' = X means Y."}, "dulce": {"translation": "sweet, candy", "explanation": "Noun (masculine). Un dulce = a sweet. Also adjective: sweet (taste)."}}}; var IMAGES_BASE = "../../images/";</script>
   <script>
     (function () {
       function escapeHtml(s) {
@@ -440,31 +236,3 @@ _STORY_PAGE_TEMPLATE = '''<!DOCTYPE html>
   </script>
 </body>
 </html>
-'''
-
-
-def write_story_pages(stories: dict) -> None:
-    """Write one index.html per story under story/<slug>/ with full SEO in head."""
-    for sid, data in stories.items():
-        slug = slugify(sid)
-        out_dir = STORY_OUTPUT_DIR / slug
-        out_dir.mkdir(parents=True, exist_ok=True)
-        html = story_page_html(data, slug)
-        (out_dir / "index.html").write_text(html, encoding="utf-8")
-
-
-def main():
-    stories = load_stories()
-    if not stories:
-        print("No story JSONs found in stories/")
-        return
-    manifest = build_manifest(stories)
-    manifest_js = escape_embed(json.dumps(manifest, ensure_ascii=False))
-    write_index(manifest_js)
-    write_story_pages(stories)
-    print("Generated index.html and story/<slug>/index.html for", len(stories), "stories.")
-    print("Open index.html in your browser (file://) — no server needed.")
-
-
-if __name__ == "__main__":
-    main()
