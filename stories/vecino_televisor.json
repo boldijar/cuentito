@@ -1,0 +1,329 @@
+{
+  "title": "Lo que oía a través de la pared",
+  "titleTranslation": "What I heard through the wall",
+  "level": "C1",
+  "language": "es",
+  "thumbnail": {
+    "filename": "vecino_televisor_thumbnail.png",
+    "generation_prompt": "Person in a room with ear close to a wall, listening, apartment interior."
+  },
+  "tags": [
+    {
+      "name": "Grammar",
+      "description": "Subjunctive (dudar, para que, lo que), relative clauses, complex past narrative, conditional nuance"
+    },
+    {
+      "name": "Vocabulary",
+      "description": "Apartment life, sounds, emotions, social interaction, embarrassment and relief"
+    },
+    {
+      "name": "Themes",
+      "description": "Misunderstanding, paranoia, neighbor relations, funny twist, everyday suspense"
+    }
+  ],
+  "content": [
+    {
+      "type": "sentence",
+      "text": "Vivo en un piso con paredes tan finas que oigo casi todo lo que ocurre al otro lado.",
+      "translation": "I live in a flat with walls so thin that I hear almost everything that happens on the other side.",
+      "detailedTranslation": [
+        "tan finas que — so thin that",
+        "lo que ocurre — what happens (relative)"
+      ],
+      "highlights": [
+        { "startIndex": 20, "endIndex": 37, "text": "paredes tan finas", "glossaryKey": "pared fina" },
+        { "startIndex": 57, "endIndex": 70, "text": "lo que ocurre", "glossaryKey": "lo que ocurre" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Una noche empecé a oír gritos y algo que sonaba a cristales rotos.",
+      "translation": "One night I started to hear shouts and something that sounded like broken glass.",
+      "detailedTranslation": [
+        "sonaba a — sounded like",
+        "cristales rotos — broken glass"
+      ],
+      "highlights": [
+        { "startIndex": 41, "endIndex": 65, "text": "sonaba a cristales rotos", "glossaryKey": "sonar a" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Luego, silencio absoluto.",
+      "translation": "Then, absolute silence.",
+      "detailedTranslation": []
+    },
+    {
+      "type": "sentence",
+      "text": "Me quedé despierto preguntándome si debía hacer algo o si me estaría imaginando cosas.",
+      "translation": "I stayed awake wondering whether I ought to do something or whether I was imagining things.",
+      "detailedTranslation": [
+        "preguntándome — wondering (gerund); preguntarse",
+        "debía — I ought to; deber, imperfect"
+      ],
+      "highlights": [
+        { "startIndex": 19, "endIndex": 32, "text": "preguntándome", "glossaryKey": "preguntarse" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Al día siguiente volvió a ocurrir: voces alteradas, un golpe sordo y de nuevo ese silencio inquietante.",
+      "translation": "The next day it happened again: raised voices, a dull thud, and again that unsettling silence.",
+      "detailedTranslation": [
+        "volvió a ocurrir — it happened again",
+        "alteradas — agitated, raised",
+        "golpe sordo — dull thud"
+      ],
+      "highlights": [
+        { "startIndex": 17, "endIndex": 33, "text": "volvió a ocurrir", "glossaryKey": "volver a" },
+        { "startIndex": 82, "endIndex": 102, "text": "silencio inquietante", "glossaryKey": "inquietante" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "No conocía al vecino más que para cruzarnos en el rellano.",
+      "translation": "I didn't know the neighbor except for passing each other on the landing.",
+      "detailedTranslation": [
+        "más que para — only to (no más que = nothing more than)",
+        "rellano — landing (of stairs)"
+      ],
+      "highlights": [
+        { "startIndex": 50, "endIndex": 57, "text": "rellano", "glossaryKey": "rellano" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Empecé a imaginarme lo peor: una discusión que se había ido de las manos, algo peor.",
+      "translation": "I started to imagine the worst: an argument that had got out of hand, something worse.",
+      "detailedTranslation": [
+        "se había ido de las manos — had got out of hand; irse de las manos"
+      ],
+      "highlights": [
+        { "startIndex": 47, "endIndex": 72, "text": "se había ido de las manos", "glossaryKey": "irse de las manos" }
+      ]
+    },
+    {
+      "type": "image",
+      "filename": "vecino_televisor_escucha_pared.png",
+      "generation_prompt": "Person at home with ear close to the wall, listening, worried expression, apartment interior."
+    },
+    {
+      "type": "sentence",
+      "text": "Pasaron tres días así; ya no lograba concentrarme en el trabajo.",
+      "translation": "Three days went by like that; I could no longer manage to concentrate on work.",
+      "detailedTranslation": [
+        "lograba — I managed to; lograr, imperfect",
+        "concentrarme — to concentrate; reflexive"
+      ],
+      "highlights": [
+        { "startIndex": 29, "endIndex": 36, "text": "lograba", "glossaryKey": "lograr" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Me sentía culpable por no actuar, pero también tenía miedo de entrometerme.",
+      "translation": "I felt guilty for not acting, but I was also afraid of sticking my nose in.",
+      "detailedTranslation": [
+        "entrometerme — to interfere, stick my nose in; reflexive"
+      ],
+      "highlights": [
+        { "startIndex": 62, "endIndex": 74, "text": "entrometerme", "glossaryKey": "entrometerse" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "No sabía si llamar a la policía o si sería exagerado.",
+      "translation": "I didn't know whether to call the police or whether that would be overkill.",
+      "detailedTranslation": [
+        "sería — would be; conditional of ser",
+        "exagerado — exaggerated, overkill"
+      ],
+      "highlights": [
+        { "startIndex": 37, "endIndex": 52, "text": "sería exagerado", "glossaryKey": "exagerado" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Al final decidí que al menos llamaría al timbre para comprobar que todo estuviera bien.",
+      "translation": "In the end I decided that at least I would ring the doorbell to check that everything was okay.",
+      "detailedTranslation": [
+        "comprobar que + subjunctive — to check that (something is the case)",
+        "estuviera — was; imperfect subjunctive of estar"
+      ],
+      "highlights": [
+        { "startIndex": 53, "endIndex": 66, "text": "comprobar que", "glossaryKey": "comprobar" },
+        { "startIndex": 67, "endIndex": 86, "text": "todo estuviera bien", "glossaryKey": "estar bien" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Bajé los escaleros con el corazón en un puño.",
+      "translation": "I went down the stairs with my heart in my mouth.",
+      "detailedTranslation": [
+        "con el corazón en un puño — idiom: with one's heart in one's mouth"
+      ],
+      "highlights": [
+        { "startIndex": 26, "endIndex": 44, "text": "corazón en un puño", "glossaryKey": "corazón en un puño" }
+      ]
+    },
+    {
+      "type": "image",
+      "filename": "vecino_televisor_ante_puerta.png",
+      "generation_prompt": "Person standing in front of a neighbor's door in an apartment corridor, about to ring the doorbell, tense posture."
+    },
+    {
+      "type": "sentence",
+      "text": "Llamé al timbre; nadie respondió al principio.",
+      "translation": "I rang the doorbell; no one answered at first.",
+      "detailedTranslation": []
+    },
+    {
+      "type": "sentence",
+      "text": "Estaba a punto de irme cuando se abrió la puerta.",
+      "translation": "I was about to leave when the door opened.",
+      "detailedTranslation": [
+        "Estaba a punto de — I was about to",
+        "cuando — when"
+      ],
+      "highlights": [
+        { "startIndex": 0, "endIndex": 17, "text": "Estaba a punto de", "glossaryKey": "estar a punto de" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "El vecino apareció con una expresión entre sorprendida y molesta.",
+      "translation": "The neighbor appeared with an expression somewhere between surprised and annoyed.",
+      "detailedTranslation": [
+        "entre... y — between... and (figurative)"
+      ],
+      "highlights": [
+        { "startIndex": 37, "endIndex": 64, "text": "entre sorprendida y molesta", "glossaryKey": "entre" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Le expliqué que había oído ruidos y que quería asegurarme de que no pasara nada grave.",
+      "translation": "I explained that I had heard noises and that I wanted to make sure nothing serious was going on.",
+      "detailedTranslation": [
+        "asegurarme de que + subjunctive — to make sure that",
+        "pasara — was happening; subjunctive"
+      ],
+      "highlights": [
+        { "startIndex": 47, "endIndex": 64, "text": "asegurarme de que", "glossaryKey": "asegurarse" },
+        { "startIndex": 65, "endIndex": 85, "text": "no pasara nada grave", "glossaryKey": "no pasar nada" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Él frunció el ceño y luego se echó a reír.",
+      "translation": "He frowned and then burst out laughing.",
+      "detailedTranslation": [
+        "frunció el ceño — he frowned",
+        "echarse a reír — to burst out laughing"
+      ],
+      "highlights": [
+        { "startIndex": 3, "endIndex": 18, "text": "frunció el ceño", "glossaryKey": "fruncir el ceño" },
+        { "startIndex": 27, "endIndex": 41, "text": "se echó a reír", "glossaryKey": "echarse a reír" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Me hizo pasar; en el salón, la televisión estaba a todo volumen.",
+      "translation": "He invited me in; in the living room, the TV was at full blast.",
+      "detailedTranslation": [
+        "hacer pasar — to show in, invite in",
+        "a todo volumen — at full volume"
+      ],
+      "highlights": [
+        { "startIndex": 0, "endIndex": 13, "text": "Me hizo pasar", "glossaryKey": "hacer pasar" },
+        { "startIndex": 49, "endIndex": 63, "text": "a todo volumen", "glossaryKey": "a todo volumen" }
+      ]
+    },
+    {
+      "type": "image",
+      "filename": "vecino_televisor_salon_tv.png",
+      "generation_prompt": "Living room with television on, neighbor gesturing toward the TV, another person looking embarrassed or relieved, apartment interior."
+    },
+    {
+      "type": "sentence",
+      "text": "Era un partido de fútbol: los comentaristas gritaban, la afición rugía y alguien acababa de marcar.",
+      "translation": "It was a football match: the commentators were shouting, the crowd was roaring, and someone had just scored.",
+      "detailedTranslation": [
+        "afición — (here) the crowd, fans",
+        "rugía — was roaring; rugir, imperfect",
+        "acababa de marcar — had just scored; acabar de + infinitive"
+      ],
+      "highlights": [
+        { "startIndex": 57, "endIndex": 64, "text": "afición", "glossaryKey": "afición" },
+        { "startIndex": 81, "endIndex": 98, "text": "acababa de marcar", "glossaryKey": "acabar de" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Me pidió disculpas por el volumen y confesó que no se había dado cuenta de lo que se oía al otro lado.",
+      "translation": "He apologized for the volume and admitted that he hadn't realised what could be heard on the other side.",
+      "detailedTranslation": [
+        "pedir disculpas — to apologise",
+        "darse cuenta de — to realise",
+        "lo que se oía — what could be heard (passive-like)"
+      ],
+      "highlights": [
+        { "startIndex": 0, "endIndex": 18, "text": "Me pidió disculpas", "glossaryKey": "pedir disculpas" },
+        { "startIndex": 48, "endIndex": 71, "text": "no se había dado cuenta", "glossaryKey": "darse cuenta" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Salí de allí sintiéndome a la vez aliviado y ridículo.",
+      "translation": "I left feeling both relieved and ridiculous.",
+      "detailedTranslation": [
+        "a la vez — at the same time, both",
+        "sintiéndome — feeling (gerund); sentirse"
+      ],
+      "highlights": [
+        { "startIndex": 25, "endIndex": 33, "text": "a la vez", "glossaryKey": "a la vez" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Desde entonces, cuando oigo gritos a través de la pared, me limito a recordar que el fútbol existe.",
+      "translation": "Since then, when I hear shouts through the wall, I just remind myself that football exists.",
+      "detailedTranslation": [
+        "me limito a — I just (do something); limitarse a + infinitive"
+      ],
+      "highlights": [
+        { "startIndex": 57, "endIndex": 68, "text": "me limito a", "glossaryKey": "limitarse a" }
+      ]
+    }
+  ],
+  "glossary": {
+    "pared fina": { "translation": "thin wall", "explanation": "Paredes finas = thin walls (you hear the neighbours)." },
+    "lo que ocurre": { "translation": "what happens", "explanation": "Relative clause: lo que + verb = what (the thing that)." },
+    "sonar a": { "translation": "to sound like", "explanation": "Sonar a + noun: sonaba a cristales = sounded like glass." },
+    "preguntarse": { "translation": "to wonder", "explanation": "Reflexive; preguntándome si... = wondering whether..." },
+    "volver a": { "translation": "to (do) again", "explanation": "Volver a + infinitive: volvió a ocurrir = it happened again." },
+    "inquietante": { "translation": "unsettling, worrying", "explanation": "Adjective; silencio inquietante = unsettling silence." },
+    "rellano": { "translation": "landing", "explanation": "The flat area between flights of stairs; en el rellano = on the landing." },
+    "irse de las manos": { "translation": "to get out of hand", "explanation": "Idiom; una discusión que se fue de las manos = an argument that got out of hand." },
+    "lograr": { "translation": "to manage to", "explanation": "Lograr + infinitive; no lograba concentrarme = I couldn't concentrate." },
+    "entrometerse": { "translation": "to interfere, stick one's nose in", "explanation": "Reflexive; tener miedo de entrometerme = afraid of interfering." },
+    "exagerado": { "translation": "exaggerated, overkill", "explanation": "Sería exagerado = it would be overkill." },
+    "comprobar": { "translation": "to check, verify", "explanation": "Comprobar que + subjunctive = to check that (something is so)." },
+    "estar bien": { "translation": "to be okay", "explanation": "Todo estuviera bien = that everything was okay (subjunctive after comprobar que)." },
+    "corazón en un puño": { "translation": "heart in one's mouth", "explanation": "Idiom: con el corazón en un puño = with one's heart in one's mouth." },
+    "estar a punto de": { "translation": "to be about to", "explanation": "Estar a punto de + infinitive: estaba a punto de irme = I was about to leave." },
+    "entre": { "translation": "between", "explanation": "Entre sorprendida y molesta = somewhere between surprised and annoyed." },
+    "asegurarse": { "translation": "to make sure", "explanation": "Asegurarse de que + subjunctive = to make sure that." },
+    "no pasar nada": { "translation": "nothing (bad) happening", "explanation": "No pasara nada grave = that nothing serious was going on." },
+    "fruncir el ceño": { "translation": "to frown", "explanation": "Literal: to furrow one's brow." },
+    "echarse a reír": { "translation": "to burst out laughing", "explanation": "Echarse a + infinitive = to start (doing something) suddenly." },
+    "hacer pasar": { "translation": "to show in, invite in", "explanation": "Me hizo pasar = he invited me in / showed me in." },
+    "a todo volumen": { "translation": "at full volume", "explanation": "Estar a todo volumen = to be at full blast." },
+    "afición": { "translation": "fans, crowd", "explanation": "Here: la afición (football fans); can also mean hobby." },
+    "acabar de": { "translation": "to have just (done)", "explanation": "Acabar de + infinitive: acababa de marcar = had just scored." },
+    "pedir disculpas": { "translation": "to apologise", "explanation": "Pedir disculpas por algo = to apologise for something." },
+    "darse cuenta": { "translation": "to realise", "explanation": "No se había dado cuenta = he hadn't realised." },
+    "a la vez": { "translation": "at the same time, both", "explanation": "A la vez aliviado y ridículo = both relieved and ridiculous." },
+    "limitarse a": { "translation": "to just (do), limit oneself to", "explanation": "Limitarse a + infinitive: me limito a recordar = I just remind myself." }
+  }
+}

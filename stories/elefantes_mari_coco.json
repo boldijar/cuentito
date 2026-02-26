@@ -1,0 +1,213 @@
+{
+  "title": "Mari, Coco y la bolsa de gusanitos",
+  "titleTranslation": "Mari, Coco and the bag of cheese puffs",
+  "level": "A1",
+  "language": "es",
+  "thumbnail": {
+    "filename": "elefantes_mari_coco_thumbnail.png",
+    "generation_prompt": "Two elephants, one small and one larger, behind a building, under a tree, grass."
+  },
+  "tags": [
+    {
+      "name": "Grammar",
+      "description": "Present tense (ser, estar, tener, ir, gustar), simple sentences, basic connectors"
+    },
+    {
+      "name": "Vocabulary",
+      "description": "Animals, food, places, nature, feelings"
+    },
+    {
+      "name": "Themes",
+      "description": "Friendship, simple pleasures, a secret spot, sharing"
+    }
+  ],
+  "content": [
+    {
+      "type": "sentence",
+      "text": "Mari es una elefanta pequeña y Coco es un elefante.",
+      "translation": "Mari is a little elephant and Coco is an elephant.",
+      "detailedTranslation": [
+        "es — is; ser (soy, eres, es)",
+        "una elefanta — a (female) elephant",
+        "un elefante — an (male) elephant"
+      ],
+      "highlights": [
+        { "startIndex": 0, "endIndex": 4, "text": "Mari", "glossaryKey": "Mari" },
+        { "startIndex": 31, "endIndex": 35, "text": "Coco", "glossaryKey": "Coco" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Son buenos amigos.",
+      "translation": "They are good friends.",
+      "detailedTranslation": ["Son — they are; ser"],
+      "highlights": [
+        { "startIndex": 0, "endIndex": 3, "text": "Son", "glossaryKey": "ser" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Un día Mari y Coco tienen una bolsa de gusanitos.",
+      "translation": "One day Mari and Coco have a bag of cheese puffs.",
+      "detailedTranslation": [
+        "Un día — one day",
+        "tienen — they have; tener (tengo, tienes, tiene, tenemos, tenéis, tienen)"
+      ],
+      "highlights": [
+        { "startIndex": 0, "endIndex": 6, "text": "Un día", "glossaryKey": "un día" },
+        { "startIndex": 26, "endIndex": 48, "text": "una bolsa de gusanitos", "glossaryKey": "bolsa de gusanitos" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Van detrás del bloque, donde nadie los ve.",
+      "translation": "They go behind the block, where nobody sees them.",
+      "detailedTranslation": [
+        "Van — they go; ir",
+        "detrás de — behind",
+        "donde — where",
+        "nadie — nobody"
+      ],
+      "highlights": [
+        { "startIndex": 0, "endIndex": 3, "text": "Van", "glossaryKey": "ir" },
+        { "startIndex": 4, "endIndex": 21, "text": "detrás del bloque", "glossaryKey": "detrás de" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Eligen un sitio a la sombra de un nogal.",
+      "translation": "They choose a spot in the shade of a walnut tree.",
+      "detailedTranslation": [
+        "Eligen — they choose; elegir",
+        "a la sombra de — in the shade of"
+      ],
+      "highlights": [
+        { "startIndex": 0, "endIndex": 6, "text": "Eligen", "glossaryKey": "elegir" },
+        { "startIndex": 16, "endIndex": 39, "text": "a la sombra de un nogal", "glossaryKey": "sombra" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Se sientan en la hierba.",
+      "translation": "They sit down on the grass.",
+      "detailedTranslation": [
+        "Se sientan — they sit down; sentarse (reflexive)"
+      ],
+      "highlights": [
+        { "startIndex": 0, "endIndex": 10, "text": "Se sientan", "glossaryKey": "sentarse" },
+        { "startIndex": 14, "endIndex": 23, "text": "la hierba", "glossaryKey": "hierba" }
+      ]
+    },
+    {
+      "type": "image",
+      "filename": "elefantes_mari_coco_detras_bloque.png",
+      "generation_prompt": "Two elephants behind a building, under a walnut tree, on grass, a bag between them."
+    },
+    {
+      "type": "sentence",
+      "text": "Abren la bolsa.",
+      "translation": "They open the bag.",
+      "detailedTranslation": ["Abren — they open; abrir"],
+      "highlights": [
+        { "startIndex": 0, "endIndex": 5, "text": "Abren", "glossaryKey": "abrir" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Los gusanitos les hacen cosquillas en los dedos.",
+      "translation": "The cheese puffs tickle their fingers.",
+      "detailedTranslation": [
+        "les hacen cosquillas — they tickle them (les = to them)",
+        "dedos — fingers"
+      ],
+      "highlights": [
+        { "startIndex": 4, "endIndex": 13, "text": "gusanitos", "glossaryKey": "gusanitos" },
+        { "startIndex": 18, "endIndex": 34, "text": "hacen cosquillas", "glossaryKey": "hacer cosquillas" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Para ellos es una aventura.",
+      "translation": "For them it is an adventure.",
+      "detailedTranslation": [
+        "Para ellos — for them",
+        "aventura — adventure"
+      ],
+      "highlights": [
+        { "startIndex": 18, "endIndex": 26, "text": "aventura", "glossaryKey": "aventura" }
+      ]
+    },
+    {
+      "type": "image",
+      "filename": "elefantes_mari_coco_comen.png",
+      "generation_prompt": "Two elephants sitting on grass eating snacks from a bag, tree shade, content."
+    },
+    {
+      "type": "sentence",
+      "text": "Ese rincón es su pequeño paraíso.",
+      "translation": "That corner is their little paradise.",
+      "detailedTranslation": [
+        "Ese — that",
+        "rincón — corner",
+        "su — their",
+        "paraíso — paradise"
+      ],
+      "highlights": [
+        { "startIndex": 0, "endIndex": 10, "text": "Ese rincón", "glossaryKey": "rincón" },
+        { "startIndex": 25, "endIndex": 32, "text": "paraíso", "glossaryKey": "paraíso" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "text": "Las cosas simples saben muy bien.",
+      "translation": "Simple things taste very good.",
+      "detailedTranslation": [
+        "saben — they taste; saber (here: taste, not know)",
+        "muy bien — very good"
+      ],
+      "highlights": [
+        { "startIndex": 10, "endIndex": 17, "text": "simples", "glossaryKey": "simple" },
+        { "startIndex": 18, "endIndex": 32, "text": "saben muy bien", "glossaryKey": "saber bien" }
+      ]
+    },
+    {
+      "type": "image",
+      "filename": "elefantes_mari_coco_paraiso.png",
+      "generation_prompt": "Two elephants in a shady corner under a tree, grass, peaceful, happy."
+    },
+    {
+      "type": "sentence",
+      "text": "Mari y Coco están muy contentos.",
+      "translation": "Mari and Coco are very happy.",
+      "detailedTranslation": [
+        "están — they are; estar (location, mood)",
+        "contentos — happy (plural masculine)"
+      ],
+      "highlights": [
+        { "startIndex": 12, "endIndex": 31, "text": "están muy contentos", "glossaryKey": "estar contento" }
+      ]
+    }
+  ],
+  "glossary": {
+    "Mari": { "translation": "Mari", "explanation": "Name of the little elephant (female)." },
+    "Coco": { "translation": "Coco", "explanation": "Name of the elephant (male)." },
+    "ser": { "translation": "to be", "explanation": "Ser: identity, origin. Son = they are." },
+    "un día": { "translation": "one day", "explanation": "Time expression; Un día + present = one day they have..." },
+    "bolsa de gusanitos": { "translation": "bag of cheese puffs", "explanation": "Gusanitos = crunchy cheese-flavoured snacks (Spain)." },
+    "ir": { "translation": "to go", "explanation": "Van = they go. Ir: voy, vas, va, vamos, vais, van." },
+    "detrás de": { "translation": "behind", "explanation": "Detrás del bloque = behind the block (building)." },
+    "elegir": { "translation": "to choose", "explanation": "Eligen = they choose. Regular -ir verb." },
+    "sombra": { "translation": "shade", "explanation": "A la sombra de un nogal = in the shade of a walnut tree." },
+    "sentarse": { "translation": "to sit down", "explanation": "Reflexive: se sientan = they sit down." },
+    "hierba": { "translation": "grass", "explanation": "En la hierba = on the grass." },
+    "abrir": { "translation": "to open", "explanation": "Abren = they open. Abrir: abro, abres, abre, abrimos, abrís, abren." },
+    "gusanitos": { "translation": "cheese puffs", "explanation": "Popular snack in Spain; crunchy sticks." },
+    "hacer cosquillas": { "translation": "to tickle", "explanation": "Les hacen cosquillas = they tickle them (their fingers)." },
+    "aventura": { "translation": "adventure", "explanation": "Una aventura = an adventure." },
+    "rincón": { "translation": "corner", "explanation": "Ese rincón = that corner (their secret spot)." },
+    "paraíso": { "translation": "paradise", "explanation": "Pequeño paraíso = little paradise." },
+    "simple": { "translation": "simple", "explanation": "Las cosas simples = simple things." },
+    "saber bien": { "translation": "to taste good", "explanation": "Saber = to taste (food); saben muy bien = they taste very good." },
+    "estar contento": { "translation": "to be happy", "explanation": "Estar contento/a = to be happy. Están muy contentos = they are very happy." }
+  }
+}
